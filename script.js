@@ -81,14 +81,18 @@
         var el = entry.target;
         cio.unobserve(el);
         var target = parseFloat(el.getAttribute("data-count")) || 0;
-        var suffix = el.getAttribute("data-suffix") || "";
-        if (reduceMotion) { el.textContent = target + suffix; return; }
+        function suf() {
+          var lang = document.documentElement.lang === "en" ? "en" : "da";
+          return el.getAttribute("data-suffix-" + lang) || el.getAttribute("data-suffix") || "";
+        }
+        if (reduceMotion) { el.textContent = target + suf(); el.dataset.counted = "1"; return; }
         var start = performance.now(), dur = 1400;
         (function tick(now) {
           var p = Math.min((now - start) / dur, 1);
           var eased = 1 - Math.pow(1 - p, 3);
-          el.textContent = Math.round(target * eased) + suffix;
+          el.textContent = Math.round(target * eased) + suf();
           if (p < 1) requestAnimationFrame(tick);
+          else el.dataset.counted = "1";
         })(start);
       });
     }, { threshold: 0.5 });
@@ -164,21 +168,25 @@
   var form = document.querySelector(".contact-form");
   if (form) {
     var status = form.querySelector(".form-status");
+    function t(key) {
+      var lang = document.documentElement.lang === "en" ? "en" : "da";
+      return (window.I18N && I18N[lang] && I18N[lang][key]) || "";
+    }
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var name = form.querySelector("#name");
       var email = form.querySelector("#email");
       var message = form.querySelector("#message");
       if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
-        status.textContent = "Udfyld venligst alle felter.";
+        status.textContent = t("msg.required");
         status.style.color = "#ffb86b"; return;
       }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-        status.textContent = "Indtast venligst en gyldig e-mail.";
+        status.textContent = t("msg.invalid");
         status.style.color = "#ffb86b"; return;
       }
       status.style.color = "";
-      status.textContent = "Tak, " + name.value.trim().split(" ")[0] + "! Vi vender tilbage inden for én arbejdsdag.";
+      status.textContent = t("msg.thanks").replace("{name}", name.value.trim().split(" ")[0]);
       form.reset();
     });
   }

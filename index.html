@@ -24,7 +24,7 @@
   <div class="cursor-glow" aria-hidden="true"></div>
 
   <header class="site-header" id="top">
-    <a href="#top" class="brand" aria-label="Nord Studio forside">
+    <a href="#top" class="brand" aria-label="Nord Studio">
       <svg class="brand-mark" viewBox="0 0 100 100" width="34" height="34" aria-hidden="true">
         <defs>
           <linearGradient id="bm" x1="0" y1="0" x2="1" y2="1">
@@ -36,16 +36,21 @@
       </svg>
       <span class="brand-name">Nord Studio</span>
     </a>
-    <nav class="nav" aria-label="Hovednavigation">
-      <a href="#ydelser">Ydelser</a>
-      <a href="#arbejde">Arbejde</a>
-      <a href="#priser">Priser</a>
-      <a href="#udtalelser">Kunder</a>
-      <a href="#kontakt" class="nav-cta">Start projekt</a>
-    </nav>
-    <button class="nav-toggle" aria-label="Åbn menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="header-actions">
+      <nav class="nav" aria-label="Hovednavigation">
+        <a href="#ydelser" data-i18n="nav.services">Ydelser</a>
+        <a href="#arbejde" data-i18n="nav.work">Arbejde</a>
+        <a href="#priser" data-i18n="nav.pricing">Priser</a>
+        <a href="#udtalelser" data-i18n="nav.clients">Kunder</a>
+        <a href="#kontakt" class="nav-cta" data-i18n="nav.cta">Start projekt</a>
+      </nav>
+      <button class="lang-toggle" type="button" aria-label="Sprog / Language">
+        <span data-lang="da">DA</span><span class="sep">/</span><span data-lang="en">EN</span>
+      </button>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
 
   <main>
@@ -53,20 +58,16 @@
     <section class="hero">
       <canvas class="hero-canvas" aria-hidden="true"></canvas>
       <div class="hero-inner">
-        <p class="pill reveal"><span class="dot"></span> Digitalt studie · Danmark · Ledige fra Q3</p>
-        <h1 class="reveal">
-          Vi bygger digitale produkter,<br />
-          folk <span class="grad">husker</span>.
-        </h1>
-        <p class="lead reveal">Nord Studio designer og udvikler hjemmesider, apps og skræddersyede løsninger —
-          med nordisk enkelhed, omhu i detaljen og kode, der holder i årevis.</p>
+        <p class="pill reveal"><span class="dot"></span> <span data-i18n="hero.pill">Digitalt studie · Danmark · Ledige fra Q3</span></p>
+        <h1 class="reveal" data-i18n="hero.title">Vi bygger digitale produkter,<br /> folk <span class="grad">husker</span>.</h1>
+        <p class="lead reveal" data-i18n="hero.lead">Nord Studio designer og udvikler hjemmesider, apps og skræddersyede løsninger — med nordisk enkelhed, omhu i detaljen og kode, der holder i årevis.</p>
         <div class="hero-actions reveal">
-          <a href="#kontakt" class="btn btn-primary">Start et projekt <span class="arrow">→</span></a>
-          <a href="#arbejde" class="btn btn-ghost">Se vores arbejde</a>
+          <a href="#kontakt" class="btn btn-primary" data-i18n="hero.cta1">Start et projekt <span class="arrow">→</span></a>
+          <a href="#arbejde" class="btn btn-ghost" data-i18n="hero.cta2">Se vores arbejde</a>
         </div>
         <div class="hero-trust reveal">
           <div class="stars" aria-hidden="true">★★★★★</div>
-          <p>Elsket af kunder — fra startups til etablerede brands.</p>
+          <p data-i18n="hero.trust">Elsket af kunder — fra startups til etablerede brands.</p>
         </div>
       </div>
     </section>
@@ -88,10 +89,9 @@
     <!-- ===== Services ===== -->
     <section class="section" id="ydelser">
       <div class="section-head reveal">
-        <p class="eyebrow">Ydelser</p>
-        <h2>Alt det digitale — samlet ét sted</h2>
-        <p class="section-sub">Fra første skitse til lancering og videreudvikling. Vi tager ansvar for hele rejsen,
-          så du kan koncentrere dig om din forretning.</p>
+        <p class="eyebrow" data-i18n="services.eyebrow">Ydelser</p>
+        <h2 data-i18n="services.title">Alt det digitale — samlet ét sted</h2>
+        <p class="section-sub" data-i18n="services.sub">Fra første skitse til lancering og videreudvikling. Vi tager ansvar for hele rejsen, så du kan koncentrere dig om din forretning.</p>
       </div>
       <div class="cards">
         <article class="card reveal">
@@ -99,27 +99,27 @@
           <div class="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg>
           </div>
-          <h3>Hjemmesider</h3>
-          <p>Hurtige, responsive og søgemaskinevenlige sider — fra elegant landingsside til fuldt CMS, du selv kan redigere.</p>
-          <ul class="tag-list"><li>Design</li><li>Udvikling</li><li>SEO</li></ul>
+          <h3 data-i18n="svc1.title">Hjemmesider</h3>
+          <p data-i18n="svc1.desc">Hurtige, responsive og søgemaskinevenlige sider — fra elegant landingsside til fuldt CMS, du selv kan redigere.</p>
+          <ul class="tag-list"><li data-i18n="svc1.t1">Design</li><li data-i18n="svc1.t2">Udvikling</li><li data-i18n="svc1.t3">SEO</li></ul>
         </article>
         <article class="card reveal">
           <span class="card-no">02</span>
           <div class="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
           </div>
-          <h3>Apps</h3>
-          <p>Native og cross-platform apps til iOS og Android, bygget til at føles hurtige, intuitive og pålidelige.</p>
-          <ul class="tag-list"><li>iOS</li><li>Android</li><li>UX</li></ul>
+          <h3 data-i18n="svc2.title">Apps</h3>
+          <p data-i18n="svc2.desc">Native og cross-platform apps til iOS og Android, bygget til at føles hurtige, intuitive og pålidelige.</p>
+          <ul class="tag-list"><li data-i18n="svc2.t1">iOS</li><li data-i18n="svc2.t2">Android</li><li data-i18n="svc2.t3">UX</li></ul>
         </article>
         <article class="card reveal">
           <span class="card-no">03</span>
           <div class="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5z"/></svg>
           </div>
-          <h3>Diverse digitalt</h3>
-          <p>Webshops, dashboards, automatiseringer og integrationer. Har du en idé, finder vi den rigtige løsning.</p>
-          <ul class="tag-list"><li>E-handel</li><li>Integration</li><li>Automatisering</li></ul>
+          <h3 data-i18n="svc3.title">Diverse digitalt</h3>
+          <p data-i18n="svc3.desc">Webshops, dashboards, automatiseringer og integrationer. Har du en idé, finder vi den rigtige løsning.</p>
+          <ul class="tag-list"><li data-i18n="svc3.t1">E-handel</li><li data-i18n="svc3.t2">Integration</li><li data-i18n="svc3.t3">Automatisering</li></ul>
         </article>
       </div>
     </section>
@@ -127,46 +127,46 @@
     <!-- ===== Work ===== -->
     <section class="section" id="arbejde">
       <div class="section-head reveal">
-        <p class="eyebrow">Udvalgt arbejde</p>
-        <h2>Projekter vi er stolte af</h2>
-        <p class="section-sub">Et lille udsnit. Udskift gerne med jeres egne cases, når I er klar.</p>
+        <p class="eyebrow" data-i18n="work.eyebrow">Udvalgt arbejde</p>
+        <h2 data-i18n="work.title">Projekter vi er stolte af</h2>
+        <p class="section-sub" data-i18n="work.sub">Et lille udsnit. Udskift gerne med jeres egne cases, når I er klar.</p>
       </div>
       <div class="work-grid">
         <article class="work reveal" style="--c1:#123a5e;--c2:#2e7fb8">
           <div class="work-thumb">
             <div class="browser">
               <div class="browser-bar"><i></i><i></i><i></i></div>
-              <div class="browser-body"><span>Fjord</span><em>Rejser uden besvær</em></div>
+              <div class="browser-body"><span>Fjord</span><em data-i18n="work1.tagline">Rejser uden besvær</em></div>
             </div>
           </div>
-          <div class="work-meta"><h3>Fjord Rejser</h3><p>Hjemmeside &amp; booking</p><span class="work-tag">Web</span></div>
+          <div class="work-meta"><h3>Fjord Rejser</h3><p data-i18n="work1.type">Hjemmeside &amp; booking</p><span class="work-tag" data-i18n="work1.tag">Web</span></div>
         </article>
         <article class="work reveal" style="--c1:#3a2a5e;--c2:#7a5bd8">
           <div class="work-thumb">
             <div class="phone">
               <div class="phone-notch"></div>
-              <div class="phone-body"><span>Pulse</span><em>Træning der motiverer</em></div>
+              <div class="phone-body"><span>Pulse</span><em data-i18n="work2.tagline">Træning der motiverer</em></div>
             </div>
           </div>
-          <div class="work-meta"><h3>Pulse Fitness</h3><p>iOS-app</p><span class="work-tag">App</span></div>
+          <div class="work-meta"><h3>Pulse Fitness</h3><p data-i18n="work2.type">iOS-app</p><span class="work-tag" data-i18n="work2.tag">App</span></div>
         </article>
         <article class="work reveal" style="--c1:#13503a;--c2:#2eb888">
           <div class="work-thumb">
             <div class="browser">
               <div class="browser-bar"><i></i><i></i><i></i></div>
-              <div class="browser-body"><span>Nordlys</span><em>Kaffe &amp; bagværk</em></div>
+              <div class="browser-body"><span>Nordlys</span><em data-i18n="work3.tagline">Kaffe &amp; bagværk</em></div>
             </div>
           </div>
-          <div class="work-meta"><h3>Nordlys Café</h3><p>Webshop</p><span class="work-tag">E-handel</span></div>
+          <div class="work-meta"><h3>Nordlys Café</h3><p data-i18n="work3.type">Webshop</p><span class="work-tag" data-i18n="work3.tag">E-handel</span></div>
         </article>
         <article class="work reveal" style="--c1:#5e3a13;--c2:#d8902e">
           <div class="work-thumb">
             <div class="browser">
               <div class="browser-bar"><i></i><i></i><i></i></div>
-              <div class="browser-body dash"><span>Atlas</span><em>Indsigt i realtid</em></div>
+              <div class="browser-body dash"><span>Atlas</span><em data-i18n="work4.tagline">Indsigt i realtid</em></div>
             </div>
           </div>
-          <div class="work-meta"><h3>Atlas Bureau</h3><p>Dashboard</p><span class="work-tag">Platform</span></div>
+          <div class="work-meta"><h3>Atlas Bureau</h3><p data-i18n="work4.type">Dashboard</p><span class="work-tag" data-i18n="work4.tag">Platform</span></div>
         </article>
       </div>
     </section>
@@ -174,111 +174,111 @@
     <!-- ===== Pricing ===== -->
     <section class="section pricing" id="priser">
       <div class="section-head center reveal">
-        <p class="eyebrow">Priser</p>
-        <h2>Gennemsigtige priser — ingen skjulte gebyrer</h2>
-        <p class="section-sub">Du ved præcis, hvad du betaler. Vi giver altid et fast tilbud, før vi går i gang.</p>
+        <p class="eyebrow" data-i18n="pricing.eyebrow">Priser</p>
+        <h2 data-i18n="pricing.title">Gennemsigtige priser — ingen skjulte gebyrer</h2>
+        <p class="section-sub" data-i18n="pricing.sub">Du ved præcis, hvad du betaler. Vi giver altid et fast tilbud, før vi går i gang.</p>
       </div>
       <div class="price-grid">
         <article class="price-card reveal">
-          <h3>Hjemmeside</h3>
-          <p class="price-desc">En professionel, responsiv side, der er klar til at imponere.</p>
+          <h3 data-i18n="price1.title">Hjemmeside</h3>
+          <p class="price-desc" data-i18n="price1.desc">En professionel, responsiv side, der er klar til at imponere.</p>
           <div class="price-block">
-            <div class="price"><span class="price-from">Fra</span><span class="amount">3.500</span><span class="cur">kr</span></div>
-            <div class="price-mo"><span class="mo-plus">+</span><span class="mo-amount">250 kr</span><span class="mo-per">/md</span></div>
-            <p class="price-note">Engangspris + drift &amp; support</p>
+            <div class="price"><span class="price-from" data-i18n="price.from">Fra</span><span class="amount">3.500</span><span class="cur">kr</span></div>
+            <div class="price-mo"><span class="mo-plus">+</span><span class="mo-amount">250 kr</span><span class="mo-per" data-i18n="price.per">/md</span></div>
+            <p class="price-note" data-i18n="price.note">Engangspris + drift &amp; support</p>
           </div>
           <ul class="price-list">
-            <li>Skræddersyet, responsivt design</li>
-            <li>Perfekt på mobil &amp; desktop</li>
-            <li>SEO-grundopsætning</li>
-            <li>Kontaktformular</li>
+            <li data-i18n="price1.l1">Skræddersyet, responsivt design</li>
+            <li data-i18n="price1.l2">Perfekt på mobil &amp; desktop</li>
+            <li data-i18n="price1.l3">SEO-grundopsætning</li>
+            <li data-i18n="price1.l4">Kontaktformular</li>
           </ul>
-          <a href="#kontakt" class="btn btn-ghost">Få et tilbud</a>
+          <a href="#kontakt" class="btn btn-ghost" data-i18n="price1.cta">Få et tilbud</a>
         </article>
 
         <article class="price-card featured reveal">
-          <span class="price-badge">Mest populær</span>
-          <h3>App</h3>
-          <p class="price-desc">Native app til iOS &amp; Android — med drift og support indbygget.</p>
+          <span class="price-badge" data-i18n="price.badge">Mest populær</span>
+          <h3 data-i18n="price2.title">App</h3>
+          <p class="price-desc" data-i18n="price2.desc">Native app til iOS &amp; Android — med drift og support indbygget.</p>
           <div class="price-block">
-            <div class="price"><span class="price-from">Fra</span><span class="amount">12.000</span><span class="cur">kr</span></div>
-            <div class="price-mo"><span class="mo-plus">+</span><span class="mo-amount">500 kr</span><span class="mo-per">/md</span></div>
-            <p class="price-note">Engangspris + drift &amp; support</p>
+            <div class="price"><span class="price-from" data-i18n="price.from">Fra</span><span class="amount">12.000</span><span class="cur">kr</span></div>
+            <div class="price-mo"><span class="mo-plus">+</span><span class="mo-amount">500 kr</span><span class="mo-per" data-i18n="price.per">/md</span></div>
+            <p class="price-note" data-i18n="price.note">Engangspris + drift &amp; support</p>
           </div>
           <ul class="price-list">
-            <li>iOS &amp; Android</li>
-            <li>Skræddersyet UX/UI-design</li>
-            <li>Drift, hosting &amp; support inkluderet</li>
-            <li>Løbende opdateringer</li>
+            <li data-i18n="price2.l1">iOS &amp; Android</li>
+            <li data-i18n="price2.l2">Skræddersyet UX/UI-design</li>
+            <li data-i18n="price2.l3">Drift, hosting &amp; support inkluderet</li>
+            <li data-i18n="price2.l4">Løbende opdateringer</li>
           </ul>
-          <a href="#kontakt" class="btn btn-primary">Start et projekt <span class="arrow">→</span></a>
+          <a href="#kontakt" class="btn btn-primary" data-i18n="price2.cta">Start et projekt <span class="arrow">→</span></a>
         </article>
 
         <article class="price-card reveal">
-          <h3>Diverse digitalt</h3>
-          <p class="price-desc">Webshop, dashboard, integration eller noget helt fjerde.</p>
+          <h3 data-i18n="price3.title">Diverse digitalt</h3>
+          <p class="price-desc" data-i18n="price3.desc">Webshop, dashboard, integration eller noget helt fjerde.</p>
           <div class="price-block">
-            <div class="price"><span class="amount">Tilbud</span></div>
-            <p class="price-note">Skræddersyet pris efter behov</p>
+            <div class="price"><span class="amount" data-i18n="price3.amount">Tilbud</span></div>
+            <p class="price-note" data-i18n="price3.note">Skræddersyet pris efter behov</p>
           </div>
           <ul class="price-list">
-            <li>Webshops &amp; e-handel</li>
-            <li>Dashboards &amp; platforme</li>
-            <li>Integrationer &amp; automatisering</li>
-            <li>Skræddersyet til dig</li>
+            <li data-i18n="price3.l1">Webshops &amp; e-handel</li>
+            <li data-i18n="price3.l2">Dashboards &amp; platforme</li>
+            <li data-i18n="price3.l3">Integrationer &amp; automatisering</li>
+            <li data-i18n="price3.l4">Skræddersyet til dig</li>
           </ul>
-          <a href="#kontakt" class="btn btn-ghost">Kontakt os</a>
+          <a href="#kontakt" class="btn btn-ghost" data-i18n="price3.cta">Kontakt os</a>
         </article>
       </div>
-      <p class="price-foot reveal">Alle priser er vejledende. Ingen skjulte gebyrer — det du ser, er det du betaler.</p>
+      <p class="price-foot reveal" data-i18n="price.foot">Alle priser er vejledende. Ingen skjulte gebyrer — det du ser, er det du betaler.</p>
     </section>
 
     <!-- ===== Stats ===== -->
     <section class="stats-band">
       <div class="stats-inner">
-        <div class="stat reveal"><span class="stat-num" data-count="50" data-suffix="+">0</span><span class="stat-label">Leverede projekter</span></div>
-        <div class="stat reveal"><span class="stat-num" data-count="100" data-suffix="%">0</span><span class="stat-label">Skræddersyet kode</span></div>
-        <div class="stat reveal"><span class="stat-num" data-count="12" data-suffix=" års">0</span><span class="stat-label">Samlet erfaring</span></div>
-        <div class="stat reveal"><span class="stat-num" data-count="24" data-suffix="t">0</span><span class="stat-label">Svartid på henvendelser</span></div>
+        <div class="stat reveal"><span class="stat-num" data-count="50" data-suffix-da="+" data-suffix-en="+">0</span><span class="stat-label" data-i18n="stat1.label">Leverede projekter</span></div>
+        <div class="stat reveal"><span class="stat-num" data-count="100" data-suffix-da="%" data-suffix-en="%">0</span><span class="stat-label" data-i18n="stat2.label">Skræddersyet kode</span></div>
+        <div class="stat reveal"><span class="stat-num" data-count="12" data-suffix-da="+" data-suffix-en="+">0</span><span class="stat-label" data-i18n="stat3.label">Års erfaring</span></div>
+        <div class="stat reveal"><span class="stat-num" data-count="24" data-suffix-da="t" data-suffix-en="h">0</span><span class="stat-label" data-i18n="stat4.label">Svartid på henvendelser</span></div>
       </div>
     </section>
 
     <!-- ===== Process ===== -->
     <section class="section" id="proces">
       <div class="section-head reveal">
-        <p class="eyebrow">Proces</p>
-        <h2>En enkel, gennemsigtig proces</h2>
-        <p class="section-sub">Du ved altid, hvor projektet er — og hvad næste skridt er.</p>
+        <p class="eyebrow" data-i18n="process.eyebrow">Proces</p>
+        <h2 data-i18n="process.title">En enkel, gennemsigtig proces</h2>
+        <p class="section-sub" data-i18n="process.sub">Du ved altid, hvor projektet er — og hvad næste skridt er.</p>
       </div>
       <ol class="steps">
-        <li class="reveal"><span class="step-no">01</span><h3>Lyt &amp; forstå</h3><p>Vi starter med dine mål, din målgruppe og det, der gør jer unikke.</p></li>
-        <li class="reveal"><span class="step-no">02</span><h3>Design</h3><p>Skitser og interaktive prototyper, så du ser løsningen før vi bygger den.</p></li>
-        <li class="reveal"><span class="step-no">03</span><h3>Byg</h3><p>Ren, vedligeholdbar kode med løbende fremvisninger undervejs.</p></li>
-        <li class="reveal"><span class="step-no">04</span><h3>Lancér &amp; pas på</h3><p>Vi går live og bliver — med drift, support og videreudvikling.</p></li>
+        <li class="reveal"><span class="step-no">01</span><h3 data-i18n="step1.title">Lyt &amp; forstå</h3><p data-i18n="step1.desc">Vi starter med dine mål, din målgruppe og det, der gør jer unikke.</p></li>
+        <li class="reveal"><span class="step-no">02</span><h3 data-i18n="step2.title">Design</h3><p data-i18n="step2.desc">Skitser og interaktive prototyper, så du ser løsningen før vi bygger den.</p></li>
+        <li class="reveal"><span class="step-no">03</span><h3 data-i18n="step3.title">Byg</h3><p data-i18n="step3.desc">Ren, vedligeholdbar kode med løbende fremvisninger undervejs.</p></li>
+        <li class="reveal"><span class="step-no">04</span><h3 data-i18n="step4.title">Lancér &amp; pas på</h3><p data-i18n="step4.desc">Vi går live og bliver — med drift, support og videreudvikling.</p></li>
       </ol>
     </section>
 
     <!-- ===== Testimonials ===== -->
     <section class="section" id="udtalelser">
       <div class="section-head reveal">
-        <p class="eyebrow">Kunder</p>
-        <h2>Ord fra dem, vi har hjulpet</h2>
+        <p class="eyebrow" data-i18n="testi.eyebrow">Kunder</p>
+        <h2 data-i18n="testi.title">Ord fra dem, vi har hjulpet</h2>
       </div>
       <div class="quotes">
         <figure class="quote reveal">
           <div class="stars" aria-hidden="true">★★★★★</div>
-          <blockquote>“Nord Studio forvandlede en løs idé til en hjemmeside, vores kunder konstant roser. Hurtige, dygtige og nemme at arbejde sammen med.”</blockquote>
-          <figcaption><span class="avatar" style="--a:#2e7fb8">MF</span><span><strong>Mette Frandsen</strong>Fjord Rejser</span></figcaption>
+          <blockquote data-i18n="quote1.text">“Nord Studio forvandlede en løs idé til en hjemmeside, vores kunder konstant roser. Hurtige, dygtige og nemme at arbejde sammen med.”</blockquote>
+          <figcaption><span class="avatar" style="--a:#2e7fb8">MF</span><span><strong>Mette Frandsen</strong><span data-i18n="quote1.role">Fjord Rejser</span></span></figcaption>
         </figure>
         <figure class="quote reveal">
           <div class="stars" aria-hidden="true">★★★★★</div>
-          <blockquote>“Vores app føles gennemført til mindste detalje. Brugerne bliver — og det kan vi mærke på tallene.”</blockquote>
-          <figcaption><span class="avatar" style="--a:#7a5bd8">JK</span><span><strong>Jonas Krogh</strong>Pulse Fitness</span></figcaption>
+          <blockquote data-i18n="quote2.text">“Vores app føles gennemført til mindste detalje. Brugerne bliver — og det kan vi mærke på tallene.”</blockquote>
+          <figcaption><span class="avatar" style="--a:#7a5bd8">JK</span><span><strong>Jonas Krogh</strong><span data-i18n="quote2.role">Pulse Fitness</span></span></figcaption>
         </figure>
         <figure class="quote reveal">
           <div class="stars" aria-hidden="true">★★★★★</div>
-          <blockquote>“Professionelle fra første møde. De leverede til tiden, holdt budgettet og overgik forventningerne.”</blockquote>
-          <figcaption><span class="avatar" style="--a:#2eb888">SL</span><span><strong>Sara Lund</strong>Nordlys Café</span></figcaption>
+          <blockquote data-i18n="quote3.text">“Professionelle fra første møde. De leverede til tiden, holdt budgettet og overgik forventningerne.”</blockquote>
+          <figcaption><span class="avatar" style="--a:#2eb888">SL</span><span><strong>Sara Lund</strong><span data-i18n="quote3.role">Nordlys Café</span></span></figcaption>
         </figure>
       </div>
     </section>
@@ -286,52 +286,52 @@
     <!-- ===== FAQ ===== -->
     <section class="section faq" id="faq">
       <div class="section-head reveal">
-        <p class="eyebrow">Spørgsmål</p>
-        <h2>Det spørger folk oftest om</h2>
+        <p class="eyebrow" data-i18n="faq.eyebrow">Spørgsmål</p>
+        <h2 data-i18n="faq.title">Det spørger folk oftest om</h2>
       </div>
       <div class="accordion reveal">
         <details>
-          <summary>Hvad koster en hjemmeside eller app?<span class="chev" aria-hidden="true"></span></summary>
-          <div class="acc-body"><p>Det afhænger af omfang. En enkel landingsside starter typisk lavt, mens større platforme og apps er mere omfattende. Vi giver altid et klart tilbud, før vi går i gang — ingen overraskelser.</p></div>
+          <summary><span data-i18n="faq1.q">Hvad koster en hjemmeside eller app?</span><span class="chev" aria-hidden="true"></span></summary>
+          <div class="acc-body"><p data-i18n="faq1.a">Det afhænger af omfang. En enkel landingsside starter typisk lavt, mens større platforme og apps er mere omfattende. Vi giver altid et klart tilbud, før vi går i gang — ingen overraskelser.</p></div>
         </details>
         <details>
-          <summary>Hvor lang tid tager et projekt?<span class="chev" aria-hidden="true"></span></summary>
-          <div class="acc-body"><p>En mindre hjemmeside kan være klar på få uger. Større projekter planlægger vi i faser, så du ser fremgang løbende.</p></div>
+          <summary><span data-i18n="faq2.q">Hvor lang tid tager et projekt?</span><span class="chev" aria-hidden="true"></span></summary>
+          <div class="acc-body"><p data-i18n="faq2.a">En mindre hjemmeside kan være klar på få uger. Større projekter planlægger vi i faser, så du ser fremgang løbende.</p></div>
         </details>
         <details>
-          <summary>Kan jeg selv redigere indholdet bagefter?<span class="chev" aria-hidden="true"></span></summary>
-          <div class="acc-body"><p>Ja. Vi bygger gerne med et brugervenligt CMS, så du nemt kan opdatere tekster, billeder og priser selv.</p></div>
+          <summary><span data-i18n="faq3.q">Kan jeg selv redigere indholdet bagefter?</span><span class="chev" aria-hidden="true"></span></summary>
+          <div class="acc-body"><p data-i18n="faq3.a">Ja. Vi bygger gerne med et brugervenligt CMS, så du nemt kan opdatere tekster, billeder og priser selv.</p></div>
         </details>
         <details>
-          <summary>Hjælper I efter lancering?<span class="chev" aria-hidden="true"></span></summary>
-          <div class="acc-body"><p>Absolut. Vi tilbyder drift, support og videreudvikling, så din løsning bliver ved med at virke og vokse med dig.</p></div>
+          <summary><span data-i18n="faq4.q">Hjælper I efter lancering?</span><span class="chev" aria-hidden="true"></span></summary>
+          <div class="acc-body"><p data-i18n="faq4.a">Absolut. Vi tilbyder drift, support og videreudvikling, så din løsning bliver ved med at virke og vokse med dig.</p></div>
         </details>
       </div>
     </section>
 
-    <!-- ===== CTA + Contact ===== -->
+    <!-- ===== Contact ===== -->
     <section class="section contact" id="kontakt">
       <div class="contact-inner reveal">
-        <p class="eyebrow">Kontakt</p>
-        <h2>Har du et projekt i tankerne?</h2>
-        <p class="section-sub">Fortæl os kort om idéen — vi vender tilbage inden for én arbejdsdag.</p>
+        <p class="eyebrow" data-i18n="contact.eyebrow">Kontakt</p>
+        <h2 data-i18n="contact.title">Har du et projekt i tankerne?</h2>
+        <p class="section-sub" data-i18n="contact.sub">Fortæl os kort om idéen — vi vender tilbage inden for én arbejdsdag.</p>
         <form class="contact-form" novalidate>
           <div class="field">
-            <label for="name">Navn</label>
+            <label for="name" data-i18n="form.name">Navn</label>
             <input id="name" name="name" type="text" autocomplete="name" required />
           </div>
           <div class="field">
-            <label for="email">E-mail</label>
+            <label for="email" data-i18n="form.email">E-mail</label>
             <input id="email" name="email" type="email" autocomplete="email" required />
           </div>
           <div class="field field-full">
-            <label for="message">Om projektet</label>
-            <textarea id="message" name="message" rows="4" placeholder="Hvad drømmer du om at bygge?" required></textarea>
+            <label for="message" data-i18n="form.message">Om projektet</label>
+            <textarea id="message" name="message" rows="4" data-i18n-ph="form.ph" placeholder="Hvad drømmer du om at bygge?" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Send besked <span class="arrow">→</span></button>
+          <button type="submit" class="btn btn-primary" data-i18n="form.cta">Send besked <span class="arrow">→</span></button>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
-        <p class="contact-alt">Eller skriv direkte til <a href="mailto:hej@nordstudio.dk">hej@nordstudio.dk</a></p>
+        <p class="contact-alt" data-i18n="contact.alt">Eller skriv direkte til <a href="mailto:hej@nordstudio.dk">hej@nordstudio.dk</a></p>
       </div>
     </section>
   </main>
@@ -346,20 +346,21 @@
           </svg>
           <span class="brand-name">Nord Studio</span>
         </div>
-        <p>Digitale produkter med nordisk enkelhed. Bygget med omhu i Danmark.</p>
+        <p data-i18n="footer.tag">Digitale produkter med nordisk enkelhed. Bygget med omhu i Danmark.</p>
       </div>
       <nav class="footer-cols" aria-label="Sidefod">
-        <div><h4>Studie</h4><a href="#ydelser">Ydelser</a><a href="#arbejde">Arbejde</a><a href="#priser">Priser</a><a href="#proces">Proces</a></div>
-        <div><h4>Mere</h4><a href="#udtalelser">Kunder</a><a href="#faq">FAQ</a><a href="#kontakt">Kontakt</a></div>
-        <div><h4>Kontakt</h4><a href="mailto:hej@nordstudio.dk">hej@nordstudio.dk</a></div>
+        <div><h4 data-i18n="footer.h1">Studie</h4><a href="#ydelser" data-i18n="nav.services">Ydelser</a><a href="#arbejde" data-i18n="nav.work">Arbejde</a><a href="#priser" data-i18n="nav.pricing">Priser</a><a href="#proces" data-i18n="footer.proces">Proces</a></div>
+        <div><h4 data-i18n="footer.h2">Mere</h4><a href="#udtalelser" data-i18n="nav.clients">Kunder</a><a href="#faq" data-i18n="footer.faq">FAQ</a><a href="#kontakt" data-i18n="footer.kontakt">Kontakt</a></div>
+        <div><h4 data-i18n="footer.h3">Kontakt</h4><a href="mailto:hej@nordstudio.dk">hej@nordstudio.dk</a></div>
       </nav>
     </div>
     <div class="footer-bottom">
-      <p>© <span id="year"></span> Nord Studio. Alle rettigheder forbeholdes.</p>
-      <a href="#top" class="to-top">Til toppen ↑</a>
+      <p>© <span id="year"></span> <span data-i18n="footer.rights">Nord Studio. Alle rettigheder forbeholdes.</span></p>
+      <a href="#top" class="to-top" data-i18n="footer.totop">Til toppen ↑</a>
     </div>
   </footer>
 
+  <script src="i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

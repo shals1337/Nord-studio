@@ -83,7 +83,20 @@ body:hover .cursor-glow { opacity: 1; }
 .brand-mark { border-radius: 9px; display: block; }
 .brand-name { font-size: 1.08rem; }
 
+.header-actions { display: flex; align-items: center; gap: 0.55rem; }
 .nav { display: flex; align-items: center; gap: 0.4rem; }
+
+.lang-toggle {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
+  padding: 0.4rem 0.75rem; cursor: pointer; font-family: "Space Grotesk", sans-serif;
+  font-size: 0.8rem; letter-spacing: 0.02em; color: var(--ink-faint);
+  transition: border-color 0.2s, background 0.2s;
+}
+.lang-toggle:hover { border-color: var(--border-strong); background: var(--surface-2); }
+.lang-toggle [data-lang] { transition: color 0.2s; }
+.lang-toggle [data-lang].active { color: var(--ink); font-weight: 600; }
+.lang-toggle .sep { color: var(--ink-faint); opacity: 0.6; }
 .nav a { color: var(--ink-soft); font-size: 0.94rem; padding: 0.5rem 0.85rem; border-radius: 999px; transition: color 0.2s, background 0.2s; }
 .nav a:hover { color: var(--ink); background: var(--surface); }
 .nav-cta {
