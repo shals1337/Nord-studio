@@ -1,4 +1,4 @@
-// ===== Nord Studio — interactions =====
+// ===== Nordcode — interactions =====
 (function () {
   "use strict";
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

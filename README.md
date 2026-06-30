@@ -1,6 +1,6 @@
-# Nord Studio
+# Nordcode
 
-Hjemmeside for **Nord Studio** — et dansk digitalt studie, der bygger hjemmesider, apps og diverse digitale løsninger.
+Hjemmeside for **Nordcode** — et dansk digitalt studie, der bygger hjemmesider, apps og diverse digitale løsninger.
 
 En hurtig, responsiv one-pager bygget i ren HTML, CSS og JavaScript — uden build-trin og uden afhængigheder, så den er nem at hoste hvor som helst.
 
@@ -34,7 +34,7 @@ python3 -m http.server 8000
 
 - **Tekst & projekter:** rediger direkte i `index.html`. Skift eksempel-cases i afsnittet *Arbejde* ud med jeres egne.
 - **Farver:** justér variablerne i `:root` øverst i `styles.css` (`--accent`, `--accent-2` m.fl.).
-- **E-mail:** opdater adressen `hej@nordstudio.dk` i `index.html`.
+- **E-mail:** opdater adressen `csgogammer38@gmail.com` i `index.html`.
 - **Kontaktformular:** sender ikke noget endnu — den viser kun en bekræftelse. Forbind den til en tjeneste som Formspree, Netlify Forms eller din egen backend, når I er klar.
 
 ## Hosting

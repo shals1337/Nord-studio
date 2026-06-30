@@ -1,13 +1,13 @@
-// ===== Nord Studio — translations (da / en) =====
+// ===== Nordcode — translations (da / en) =====
 window.I18N = {
   da: {
-    "meta.title": "Nord Studio — Hjemmesider, apps og digitale produkter",
+    "meta.title": "Nordcode — Hjemmesider, apps og digitale produkter",
     "nav.services": "Ydelser", "nav.work": "Arbejde", "nav.pricing": "Priser",
     "nav.clients": "Kunder", "nav.cta": "Start projekt",
 
     "hero.pill": "Digitalt studie · Danmark · Ledige fra Q3",
     "hero.title": 'Vi bygger digitale produkter,<br /> folk <span class="grad">husker</span>.',
-    "hero.lead": "Nord Studio designer og udvikler hjemmesider, apps og skræddersyede løsninger — med nordisk enkelhed, omhu i detaljen og kode, der holder i årevis.",
+    "hero.lead": "Nordcode designer og udvikler hjemmesider, apps og skræddersyede løsninger — med nordisk enkelhed, omhu i detaljen og kode, der holder i årevis.",
     "hero.cta1": 'Start et projekt <span class="arrow">→</span>',
     "hero.cta2": "Se vores arbejde",
     "hero.trust": "Elsket af kunder — fra startups til etablerede brands.",
@@ -67,7 +67,7 @@ window.I18N = {
 
     "testi.eyebrow": "Kunder",
     "testi.title": "Ord fra dem, vi har hjulpet",
-    "quote1.text": "“Nord Studio forvandlede en løs idé til en hjemmeside, vores kunder konstant roser. Hurtige, dygtige og nemme at arbejde sammen med.”",
+    "quote1.text": "“Nordcode forvandlede en løs idé til en hjemmeside, vores kunder konstant roser. Hurtige, dygtige og nemme at arbejde sammen med.”",
     "quote1.role": "Fjord Rejser",
     "quote2.text": "“Vores app føles gennemført til mindste detalje. Brugerne bliver — og det kan vi mærke på tallene.”",
     "quote2.role": "Pulse Fitness",
@@ -91,7 +91,7 @@ window.I18N = {
     "form.name": "Navn", "form.email": "E-mail", "form.message": "Om projektet",
     "form.ph": "Hvad drømmer du om at bygge?",
     "form.cta": 'Send besked <span class="arrow">→</span>',
-    "contact.alt": 'Eller skriv direkte til <a href="mailto:hej@nordstudio.dk">hej@nordstudio.dk</a>',
+    "contact.alt": 'Eller skriv direkte til <a href="mailto:csgogammer38@gmail.com">csgogammer38@gmail.com</a>',
 
     "card.more": "Læs mere →",
     "work.cta": "Se cases med resultater →",
@@ -99,7 +99,7 @@ window.I18N = {
     "footer.h1": "Ydelser", "footer.h2": "Mere", "footer.h3": "Kontakt",
     "footer.proces": "Proces", "footer.faq": "FAQ", "footer.kontakt": "Kontakt",
     "foot.web": "Hjemmesider", "foot.app": "App-udvikling", "foot.shop": "Webshop", "foot.ux": "UX/UI-design", "foot.cases": "Cases",
-    "footer.rights": "Nord Studio. Alle rettigheder forbeholdes.",
+    "footer.rights": "Nordcode. Alle rettigheder forbeholdes.",
     "footer.totop": "Til toppen ↑",
 
     "msg.required": "Udfyld venligst alle felter.",
@@ -108,13 +108,13 @@ window.I18N = {
   },
 
   en: {
-    "meta.title": "Nord Studio — Websites, apps and digital products",
+    "meta.title": "Nordcode — Websites, apps and digital products",
     "nav.services": "Services", "nav.work": "Work", "nav.pricing": "Pricing",
     "nav.clients": "Clients", "nav.cta": "Start project",
 
     "hero.pill": "Digital studio · Denmark · Available from Q3",
     "hero.title": 'We build digital products<br /> people <span class="grad">remember</span>.',
-    "hero.lead": "Nord Studio designs and builds websites, apps and bespoke solutions — with Nordic simplicity, attention to detail and code that lasts for years.",
+    "hero.lead": "Nordcode designs and builds websites, apps and bespoke solutions — with Nordic simplicity, attention to detail and code that lasts for years.",
     "hero.cta1": 'Start a project <span class="arrow">→</span>',
     "hero.cta2": "See our work",
     "hero.trust": "Loved by clients — from startups to established brands.",
@@ -174,7 +174,7 @@ window.I18N = {
 
     "testi.eyebrow": "Clients",
     "testi.title": "Words from those we've helped",
-    "quote1.text": "“Nord Studio turned a loose idea into a website our customers constantly praise. Fast, skilled and easy to work with.”",
+    "quote1.text": "“Nordcode turned a loose idea into a website our customers constantly praise. Fast, skilled and easy to work with.”",
     "quote1.role": "Fjord Rejser",
     "quote2.text": "“Our app feels polished down to the last detail. Users stick around — and we can see it in the numbers.”",
     "quote2.role": "Pulse Fitness",
@@ -198,7 +198,7 @@ window.I18N = {
     "form.name": "Name", "form.email": "Email", "form.message": "About the project",
     "form.ph": "What do you dream of building?",
     "form.cta": 'Send message <span class="arrow">→</span>',
-    "contact.alt": 'Or email us directly at <a href="mailto:hej@nordstudio.dk">hej@nordstudio.dk</a>',
+    "contact.alt": 'Or email us directly at <a href="mailto:csgogammer38@gmail.com">csgogammer38@gmail.com</a>',
 
     "card.more": "Learn more →",
     "work.cta": "See cases with results →",
@@ -206,7 +206,7 @@ window.I18N = {
     "footer.h1": "Services", "footer.h2": "More", "footer.h3": "Contact",
     "footer.proces": "Process", "footer.faq": "FAQ", "footer.kontakt": "Contact",
     "foot.web": "Websites", "foot.app": "App development", "foot.shop": "Online shop", "foot.ux": "UX/UI design", "foot.cases": "Cases",
-    "footer.rights": "Nord Studio. All rights reserved.",
+    "footer.rights": "Nordcode. All rights reserved.",
     "footer.totop": "Back to top ↑",
 
     "msg.required": "Please fill in all fields.",
