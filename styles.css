@@ -74,7 +74,7 @@ body:hover .cursor-glow { opacity: 1; }
 }
 .site-header::before {
   content: ""; position: absolute; inset: 0; z-index: -1;
-  background: rgba(7, 15, 26, 0.7); backdrop-filter: blur(14px) saturate(140%);
+  background: rgba(7, 15, 26, 0.7); -webkit-backdrop-filter: blur(14px) saturate(140%); backdrop-filter: blur(14px) saturate(140%);
   border-bottom: 1px solid transparent; opacity: 0; transition: opacity 0.35s ease;
 }
 .site-header.scrolled::before { opacity: 1; border-bottom-color: var(--border); }
@@ -136,12 +136,12 @@ body:hover .cursor-glow { opacity: 1; }
 .pill {
   display: inline-flex; align-items: center; gap: 0.55rem; font-size: 0.85rem; color: var(--ink-soft);
   padding: 0.45rem 1rem; border: 1px solid var(--border); border-radius: 999px;
-  background: var(--surface); backdrop-filter: blur(6px); margin-bottom: 1.6rem;
+  background: var(--surface); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); margin-bottom: 1.6rem;
 }
 .pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 0 0 rgba(122,255,209,0.6); animation: pulse 2.2s infinite; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(122,255,209,0.55); } 70% { box-shadow: 0 0 0 8px rgba(122,255,209,0); } 100% { box-shadow: 0 0 0 0 rgba(122,255,209,0); } }
 .hero h1 { font-size: clamp(2.5rem, 7vw, 5rem); margin: 0 auto 1.5rem; font-weight: 600; }
-.hero .grad { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero .grad { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent; }
 .hero .lead { max-width: 640px; margin: 0 auto 2.3rem; font-size: clamp(1.08rem, 2vw, 1.25rem); color: var(--ink-soft); }
 .hero-actions { display: flex; gap: 0.9rem; justify-content: center; flex-wrap: wrap; }
 .hero-trust { margin-top: 2.6rem; display: flex; align-items: center; gap: 0.8rem; justify-content: center; flex-wrap: wrap; color: var(--ink-soft); font-size: 0.92rem; }
@@ -235,7 +235,7 @@ body:hover .cursor-glow { opacity: 1; }
 .price-block { margin-bottom: 1.7rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
 .price { display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap; }
 .price-from { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ink-faint); align-self: center; }
-.price .amount { font-family: "Space Grotesk", sans-serif; font-size: 2.7rem; font-weight: 700; line-height: 1; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.price .amount { font-family: "Space Grotesk", sans-serif; font-size: 2.7rem; font-weight: 700; line-height: 1; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent; }
 .price .cur { color: var(--ink-soft); font-size: 1.05rem; font-weight: 500; }
 .price-mo { display: inline-flex; align-items: baseline; gap: 0.3rem; margin-top: 0.85rem; padding: 0.4rem 0.9rem; border: 1px solid var(--border); border-radius: 999px; background: var(--surface-2); }
 .price-mo .mo-plus { color: var(--accent-2); font-weight: 700; }
@@ -255,7 +255,7 @@ body:hover .cursor-glow { opacity: 1; }
 /* ===== Stats band ===== */
 .stats-band { border-block: 1px solid var(--border); background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent); position: relative; z-index: 2; }
 .stats-inner { max-width: var(--maxw); margin: 0 auto; padding: clamp(2.5rem, 5vw, 3.6rem) clamp(1.1rem, 4vw, 2.5rem); display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; text-align: center; }
-.stat-num { display: block; font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 700; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.stat-num { display: block; font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 700; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent; }
 .stat-label { color: var(--ink-soft); font-size: 0.92rem; }
 
 /* ===== Steps ===== */
