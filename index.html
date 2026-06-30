@@ -3,39 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nord Studio — Hjemmesider, apps og digitalt design</title>
-  <meta name="description" content="Nord Studio er et dansk digitalt studie, der bygger hjemmesider, apps og skræddersyede digitale løsninger med nordisk enkelhed." />
-  <meta name="theme-color" content="#0b1f33" />
+  <title>Nord Studio — Hjemmesider, apps og digitale produkter</title>
+  <meta name="description" content="Nord Studio er et dansk digitalt studie, der designer og bygger hjemmesider, apps og skræddersyede digitale produkter med nordisk enkelhed og høj håndværksmæssig kvalitet." />
+  <meta name="theme-color" content="#070f1a" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Nord Studio — Digitalt studie" />
-  <meta property="og:description" content="Vi bygger hjemmesider, apps og digitale løsninger med nordisk enkelhed." />
+  <meta property="og:description" content="Vi designer og bygger hjemmesider, apps og digitale produkter med nordisk enkelhed." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="da_DK" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b1f33'/%3E%3Cpath d='M28 72V28h8l28 30V28h8v44h-8L36 42v30z' fill='%23e8f0f7'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2356c7ff'/%3E%3Cstop offset='1' stop-color='%237affd1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='%23070f1a'/%3E%3Cpath d='M28 73V27h7.5l29 31V27H72v46h-7.5L35.5 42v31z' fill='url(%23g)'/%3E%3C/svg%3E" />
 </head>
 <body>
-  <!-- Aurora background -->
-  <div class="aurora" aria-hidden="true">
-    <span></span><span></span><span></span>
-  </div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
 
   <header class="site-header" id="top">
     <a href="#top" class="brand" aria-label="Nord Studio forside">
-      <span class="brand-mark">N</span>
+      <svg class="brand-mark" viewBox="0 0 100 100" width="34" height="34" aria-hidden="true">
+        <defs>
+          <linearGradient id="bm" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#56c7ff" /><stop offset="1" stop-color="#7affd1" />
+          </linearGradient>
+        </defs>
+        <rect width="100" height="100" rx="24" fill="url(#bm)" />
+        <path d="M28 73V27h7.5l29 31V27H72v46h-7.5L35.5 42v31z" fill="#070f1a" />
+      </svg>
       <span class="brand-name">Nord Studio</span>
     </a>
     <nav class="nav" aria-label="Hovednavigation">
       <a href="#ydelser">Ydelser</a>
       <a href="#arbejde">Arbejde</a>
       <a href="#proces">Proces</a>
-      <a href="#om">Om os</a>
-      <a href="#kontakt" class="nav-cta">Kontakt</a>
+      <a href="#udtalelser">Kunder</a>
+      <a href="#kontakt" class="nav-cta">Start projekt</a>
     </nav>
     <button class="nav-toggle" aria-label="Åbn menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -43,45 +49,74 @@
   </header>
 
   <main>
-    <!-- Hero -->
+    <!-- ===== Hero ===== -->
     <section class="hero">
-      <p class="eyebrow reveal">Digitalt studie · Danmark</p>
-      <h1 class="reveal">Vi bygger hjemmesider, apps<br /> og digitale ting der virker.</h1>
-      <p class="lead reveal">Nord Studio er et lille, fokuseret studie. Vi forvandler idéer til
-        gennemtænkte produkter — med nordisk enkelhed, omhu i detaljen og kode, der holder.</p>
-      <div class="hero-actions reveal">
-        <a href="#kontakt" class="btn btn-primary">Start et projekt</a>
-        <a href="#arbejde" class="btn btn-ghost">Se vores arbejde</a>
+      <canvas class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-inner">
+        <p class="pill reveal"><span class="dot"></span> Digitalt studie · Danmark · Ledige fra Q3</p>
+        <h1 class="reveal">
+          Vi bygger digitale produkter,<br />
+          folk <span class="grad">husker</span>.
+        </h1>
+        <p class="lead reveal">Nord Studio designer og udvikler hjemmesider, apps og skræddersyede løsninger —
+          med nordisk enkelhed, omhu i detaljen og kode, der holder i årevis.</p>
+        <div class="hero-actions reveal">
+          <a href="#kontakt" class="btn btn-primary">Start et projekt <span class="arrow">→</span></a>
+          <a href="#arbejde" class="btn btn-ghost">Se vores arbejde</a>
+        </div>
+        <div class="hero-trust reveal">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>Elsket af kunder — fra startups til etablerede brands.</p>
+        </div>
       </div>
-      <dl class="hero-stats reveal">
-        <div><dt>50+</dt><dd>leverede projekter</dd></div>
-        <div><dt>100%</dt><dd>skræddersyet kode</dd></div>
-        <div><dt>∞</dt><dd>kaffe undervejs</dd></div>
-      </dl>
     </section>
 
-    <!-- Services -->
+    <!-- ===== Marquee ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Webdesign</span><span>·</span><span>iOS &amp; Android</span><span>·</span>
+        <span>Webshops</span><span>·</span><span>Brand &amp; identitet</span><span>·</span>
+        <span>UX/UI</span><span>·</span><span>Automatisering</span><span>·</span>
+        <span>SEO</span><span>·</span><span>Vedligehold</span><span>·</span>
+        <span>Webdesign</span><span>·</span><span>iOS &amp; Android</span><span>·</span>
+        <span>Webshops</span><span>·</span><span>Brand &amp; identitet</span><span>·</span>
+        <span>UX/UI</span><span>·</span><span>Automatisering</span><span>·</span>
+        <span>SEO</span><span>·</span><span>Vedligehold</span><span>·</span>
+      </div>
+    </div>
+
+    <!-- ===== Services ===== -->
     <section class="section" id="ydelser">
       <div class="section-head reveal">
         <p class="eyebrow">Ydelser</p>
-        <h2>Alt det digitale — ét sted</h2>
-        <p class="section-sub">Fra første skitse til lancering og videreudvikling. Vi tager ansvar for hele rejsen.</p>
+        <h2>Alt det digitale — samlet ét sted</h2>
+        <p class="section-sub">Fra første skitse til lancering og videreudvikling. Vi tager ansvar for hele rejsen,
+          så du kan koncentrere dig om din forretning.</p>
       </div>
       <div class="cards">
         <article class="card reveal">
-          <div class="card-icon">🌐</div>
+          <span class="card-no">01</span>
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg>
+          </div>
           <h3>Hjemmesider</h3>
           <p>Hurtige, responsive og søgemaskinevenlige sider — fra elegant landingsside til fuldt CMS, du selv kan redigere.</p>
           <ul class="tag-list"><li>Design</li><li>Udvikling</li><li>SEO</li></ul>
         </article>
         <article class="card reveal">
-          <div class="card-icon">📱</div>
+          <span class="card-no">02</span>
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+          </div>
           <h3>Apps</h3>
           <p>Native og cross-platform apps til iOS og Android, bygget til at føles hurtige, intuitive og pålidelige.</p>
           <ul class="tag-list"><li>iOS</li><li>Android</li><li>UX</li></ul>
         </article>
         <article class="card reveal">
-          <div class="card-icon">✦</div>
+          <span class="card-no">03</span>
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5z"/></svg>
+          </div>
           <h3>Diverse digitalt</h3>
           <p>Webshops, dashboards, automatiseringer og integrationer. Har du en idé, finder vi den rigtige løsning.</p>
           <ul class="tag-list"><li>E-handel</li><li>Integration</li><li>Automatisering</li></ul>
@@ -89,68 +124,130 @@
       </div>
     </section>
 
-    <!-- Work -->
+    <!-- ===== Work ===== -->
     <section class="section" id="arbejde">
       <div class="section-head reveal">
         <p class="eyebrow">Udvalgt arbejde</p>
         <h2>Projekter vi er stolte af</h2>
-        <p class="section-sub">Et lille udsnit. Skift gerne navnene ud med jeres egne cases.</p>
+        <p class="section-sub">Et lille udsnit. Udskift gerne med jeres egne cases, når I er klar.</p>
       </div>
       <div class="work-grid">
-        <article class="work reveal">
-          <div class="work-thumb" style="--c1:#1b3a5b;--c2:#2e6ca3"><span>Fjord</span></div>
-          <div class="work-meta"><h3>Fjord Rejser</h3><p>Hjemmeside &amp; booking</p></div>
+        <article class="work reveal" style="--c1:#123a5e;--c2:#2e7fb8">
+          <div class="work-thumb">
+            <div class="browser">
+              <div class="browser-bar"><i></i><i></i><i></i></div>
+              <div class="browser-body"><span>Fjord</span><em>Rejser uden besvær</em></div>
+            </div>
+          </div>
+          <div class="work-meta"><h3>Fjord Rejser</h3><p>Hjemmeside &amp; booking</p><span class="work-tag">Web</span></div>
         </article>
-        <article class="work reveal">
-          <div class="work-thumb" style="--c1:#3a2e5b;--c2:#6c4fa3"><span>Pulse</span></div>
-          <div class="work-meta"><h3>Pulse Fitness</h3><p>iOS-app</p></div>
+        <article class="work reveal" style="--c1:#3a2a5e;--c2:#7a5bd8">
+          <div class="work-thumb">
+            <div class="phone">
+              <div class="phone-notch"></div>
+              <div class="phone-body"><span>Pulse</span><em>Træning der motiverer</em></div>
+            </div>
+          </div>
+          <div class="work-meta"><h3>Pulse Fitness</h3><p>iOS-app</p><span class="work-tag">App</span></div>
         </article>
-        <article class="work reveal">
-          <div class="work-thumb" style="--c1:#1b4b3a;--c2:#2ea36c"><span>Nordlys</span></div>
-          <div class="work-meta"><h3>Nordlys Café</h3><p>Webshop</p></div>
+        <article class="work reveal" style="--c1:#13503a;--c2:#2eb888">
+          <div class="work-thumb">
+            <div class="browser">
+              <div class="browser-bar"><i></i><i></i><i></i></div>
+              <div class="browser-body"><span>Nordlys</span><em>Kaffe &amp; bagværk</em></div>
+            </div>
+          </div>
+          <div class="work-meta"><h3>Nordlys Café</h3><p>Webshop</p><span class="work-tag">E-handel</span></div>
         </article>
-        <article class="work reveal">
-          <div class="work-thumb" style="--c1:#5b3a1b;--c2:#a36c2e"><span>Atlas</span></div>
-          <div class="work-meta"><h3>Atlas Bureau</h3><p>Dashboard</p></div>
+        <article class="work reveal" style="--c1:#5e3a13;--c2:#d8902e">
+          <div class="work-thumb">
+            <div class="browser">
+              <div class="browser-bar"><i></i><i></i><i></i></div>
+              <div class="browser-body dash"><span>Atlas</span><em>Indsigt i realtid</em></div>
+            </div>
+          </div>
+          <div class="work-meta"><h3>Atlas Bureau</h3><p>Dashboard</p><span class="work-tag">Platform</span></div>
         </article>
       </div>
     </section>
 
-    <!-- Process -->
+    <!-- ===== Stats ===== -->
+    <section class="stats-band">
+      <div class="stats-inner">
+        <div class="stat reveal"><span class="stat-num" data-count="50" data-suffix="+">0</span><span class="stat-label">Leverede projekter</span></div>
+        <div class="stat reveal"><span class="stat-num" data-count="100" data-suffix="%">0</span><span class="stat-label">Skræddersyet kode</span></div>
+        <div class="stat reveal"><span class="stat-num" data-count="12" data-suffix=" års">0</span><span class="stat-label">Samlet erfaring</span></div>
+        <div class="stat reveal"><span class="stat-num" data-count="24" data-suffix="t">0</span><span class="stat-label">Svartid på henvendelser</span></div>
+      </div>
+    </section>
+
+    <!-- ===== Process ===== -->
     <section class="section" id="proces">
       <div class="section-head reveal">
         <p class="eyebrow">Proces</p>
-        <h2>Sådan arbejder vi</h2>
-        <p class="section-sub">En enkel, gennemsigtig proces — du ved altid, hvor projektet er.</p>
+        <h2>En enkel, gennemsigtig proces</h2>
+        <p class="section-sub">Du ved altid, hvor projektet er — og hvad næste skridt er.</p>
       </div>
       <ol class="steps">
         <li class="reveal"><span class="step-no">01</span><h3>Lyt &amp; forstå</h3><p>Vi starter med dine mål, din målgruppe og det, der gør jer unikke.</p></li>
-        <li class="reveal"><span class="step-no">02</span><h3>Design</h3><p>Skitser og prototyper, så du ser løsningen før vi bygger den.</p></li>
-        <li class="reveal"><span class="step-no">03</span><h3>Byg</h3><p>Ren, vedligeholdbar kode med løbende fremvisninger.</p></li>
+        <li class="reveal"><span class="step-no">02</span><h3>Design</h3><p>Skitser og interaktive prototyper, så du ser løsningen før vi bygger den.</p></li>
+        <li class="reveal"><span class="step-no">03</span><h3>Byg</h3><p>Ren, vedligeholdbar kode med løbende fremvisninger undervejs.</p></li>
         <li class="reveal"><span class="step-no">04</span><h3>Lancér &amp; pas på</h3><p>Vi går live og bliver — med drift, support og videreudvikling.</p></li>
       </ol>
     </section>
 
-    <!-- About -->
-    <section class="section about" id="om">
-      <div class="about-text reveal">
-        <p class="eyebrow">Om os</p>
-        <h2>Et nordisk studie med fokus på det væsentlige</h2>
-        <p>Vi tror på enkelhed: færre knapper, klarere budskaber og produkter, der bare virker.
-          Hos Nord Studio er du tæt på dem, der bygger din løsning — ingen mellemled, ingen overflødigt mas.</p>
-        <p>Uanset om det er en hjemmeside, en app eller noget helt fjerde, er målet det samme:
-          noget du er stolt af at vise frem.</p>
-        <a href="#kontakt" class="btn btn-primary">Lad os tale sammen</a>
+    <!-- ===== Testimonials ===== -->
+    <section class="section" id="udtalelser">
+      <div class="section-head reveal">
+        <p class="eyebrow">Kunder</p>
+        <h2>Ord fra dem, vi har hjulpet</h2>
       </div>
-      <ul class="about-values reveal">
-        <li><strong>Enkelhed</strong><span>Mindre støj, mere mening.</span></li>
-        <li><strong>Håndværk</strong><span>Detaljerne afgør det.</span></li>
-        <li><strong>Nærhed</strong><span>Direkte dialog hele vejen.</span></li>
-        <li><strong>Holdbarhed</strong><span>Kode, der står distancen.</span></li>
-      </ul>
+      <div class="quotes">
+        <figure class="quote reveal">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <blockquote>“Nord Studio forvandlede en løs idé til en hjemmeside, vores kunder konstant roser. Hurtige, dygtige og nemme at arbejde sammen med.”</blockquote>
+          <figcaption><span class="avatar" style="--a:#2e7fb8">MF</span><span><strong>Mette Frandsen</strong>Fjord Rejser</span></figcaption>
+        </figure>
+        <figure class="quote reveal">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <blockquote>“Vores app føles gennemført til mindste detalje. Brugerne bliver — og det kan vi mærke på tallene.”</blockquote>
+          <figcaption><span class="avatar" style="--a:#7a5bd8">JK</span><span><strong>Jonas Krogh</strong>Pulse Fitness</span></figcaption>
+        </figure>
+        <figure class="quote reveal">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <blockquote>“Professionelle fra første møde. De leverede til tiden, holdt budgettet og overgik forventningerne.”</blockquote>
+          <figcaption><span class="avatar" style="--a:#2eb888">SL</span><span><strong>Sara Lund</strong>Nordlys Café</span></figcaption>
+        </figure>
+      </div>
     </section>
 
-    <!-- Contact -->
+    <!-- ===== FAQ ===== -->
+    <section class="section faq" id="faq">
+      <div class="section-head reveal">
+        <p class="eyebrow">Spørgsmål</p>
+        <h2>Det spørger folk oftest om</h2>
+      </div>
+      <div class="accordion reveal">
+        <details>
+          <summary>Hvad koster en hjemmeside eller app?<span class="chev" aria-hidden="true"></span></summary>
+          <div class="acc-body"><p>Det afhænger af omfang. En enkel landingsside starter typisk lavt, mens større platforme og apps er mere omfattende. Vi giver altid et klart tilbud, før vi går i gang — ingen overraskelser.</p></div>
+        </details>
+        <details>
+          <summary>Hvor lang tid tager et projekt?<span class="chev" aria-hidden="true"></span></summary>
+          <div class="acc-body"><p>En mindre hjemmeside kan være klar på få uger. Større projekter planlægger vi i faser, så du ser fremgang løbende.</p></div>
+        </details>
+        <details>
+          <summary>Kan jeg selv redigere indholdet bagefter?<span class="chev" aria-hidden="true"></span></summary>
+          <div class="acc-body"><p>Ja. Vi bygger gerne med et brugervenligt CMS, så du nemt kan opdatere tekster, billeder og priser selv.</p></div>
+        </details>
+        <details>
+          <summary>Hjælper I efter lancering?<span class="chev" aria-hidden="true"></span></summary>
+          <div class="acc-body"><p>Absolut. Vi tilbyder drift, support og videreudvikling, så din løsning bliver ved med at virke og vokse med dig.</p></div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===== CTA + Contact ===== -->
     <section class="section contact" id="kontakt">
       <div class="contact-inner reveal">
         <p class="eyebrow">Kontakt</p>
@@ -167,9 +264,9 @@
           </div>
           <div class="field field-full">
             <label for="message">Om projektet</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+            <textarea id="message" name="message" rows="4" placeholder="Hvad drømmer du om at bygge?" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Send besked</button>
+          <button type="submit" class="btn btn-primary">Send besked <span class="arrow">→</span></button>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
         <p class="contact-alt">Eller skriv direkte til <a href="mailto:hej@nordstudio.dk">hej@nordstudio.dk</a></p>
@@ -178,16 +275,27 @@
   </main>
 
   <footer class="site-footer">
-    <div class="brand">
-      <span class="brand-mark">N</span>
-      <span class="brand-name">Nord Studio</span>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand">
+          <svg class="brand-mark" viewBox="0 0 100 100" width="30" height="30" aria-hidden="true">
+            <rect width="100" height="100" rx="24" fill="url(#bm)" />
+            <path d="M28 73V27h7.5l29 31V27H72v46h-7.5L35.5 42v31z" fill="#070f1a" />
+          </svg>
+          <span class="brand-name">Nord Studio</span>
+        </div>
+        <p>Digitale produkter med nordisk enkelhed. Bygget med omhu i Danmark.</p>
+      </div>
+      <nav class="footer-cols" aria-label="Sidefod">
+        <div><h4>Studie</h4><a href="#ydelser">Ydelser</a><a href="#arbejde">Arbejde</a><a href="#proces">Proces</a></div>
+        <div><h4>Mere</h4><a href="#udtalelser">Kunder</a><a href="#faq">FAQ</a><a href="#kontakt">Kontakt</a></div>
+        <div><h4>Kontakt</h4><a href="mailto:hej@nordstudio.dk">hej@nordstudio.dk</a></div>
+      </nav>
     </div>
-    <p>© <span id="year"></span> Nord Studio · Bygget med omhu i Danmark.</p>
-    <nav class="footer-nav" aria-label="Sidefod">
-      <a href="#ydelser">Ydelser</a>
-      <a href="#arbejde">Arbejde</a>
-      <a href="#kontakt">Kontakt</a>
-    </nav>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Nord Studio. Alle rettigheder forbeholdes.</p>
+      <a href="#top" class="to-top">Til toppen ↑</a>
+    </div>
   </footer>
 
   <script src="script.js"></script>
