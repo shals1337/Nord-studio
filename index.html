@@ -10,6 +10,12 @@
   <meta name="author" content="Nord Studio" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#070f1a" />
+  <meta name="geo.region" content="DK" />
+  <meta name="geo.placename" content="Danmark" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Nord Studio" />
+  <meta name="application-name" content="Nord Studio" />
   <link rel="canonical" href="https://shals1337.github.io/Nord-studio/" />
 
   <!-- Open Graph -->
@@ -56,13 +62,20 @@
         "logo": "https://shals1337.github.io/Nord-studio/icon-512.png",
         "email": "hej@nordstudio.dk",
         "description": "Nord Studio designer og udvikler hjemmesider, apps og skræddersyede digitale produkter med nordisk enkelhed.",
-        "areaServed": "DK",
+        "slogan": "Vi bygger digitale produkter, folk husker.",
+        "areaServed": { "@type": "Country", "name": "Danmark" },
         "knowsLanguage": ["da", "en"],
         "priceRange": "fra 3.500 kr",
-        "makesOffer": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hjemmeside" }, "price": "3500", "priceCurrency": "DKK" },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "App" }, "price": "12000", "priceCurrency": "DKK" }
-        ]
+        "serviceType": ["Webdesign", "App-udvikling", "Webshop", "UX/UI-design"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Ydelser",
+          "itemListElement": [
+            { "@type": "Offer", "price": "3500", "priceCurrency": "DKK", "itemOffered": { "@type": "Service", "name": "Hjemmeside", "description": "Hurtige, responsive og søgemaskinevenlige hjemmesider — fra landingsside til fuldt CMS." } },
+            { "@type": "Offer", "price": "12000", "priceCurrency": "DKK", "itemOffered": { "@type": "Service", "name": "App", "description": "Native og cross-platform apps til iOS og Android." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diverse digitalt", "description": "Webshops, dashboards, integrationer og automatiseringer." } }
+          ]
+        }
       },
       {
         "@type": "WebSite",
