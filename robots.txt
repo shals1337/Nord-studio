@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shals1337.github.io/Nord-studio/sitemap.xml

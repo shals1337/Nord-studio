@@ -1,0 +1,14 @@
+{
+  "name": "Nord Studio",
+  "short_name": "Nord Studio",
+  "description": "Vi designer og bygger hjemmesider, apps og digitale produkter med nordisk enkelhed.",
+  "start_url": "/Nord-studio/",
+  "scope": "/Nord-studio/",
+  "display": "standalone",
+  "background_color": "#070f1a",
+  "theme_color": "#070f1a",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
