@@ -93,9 +93,12 @@ window.I18N = {
     "form.cta": 'Send besked <span class="arrow">→</span>',
     "contact.alt": 'Eller skriv direkte til <a href="mailto:hej@nordstudio.dk">hej@nordstudio.dk</a>',
 
+    "card.more": "Læs mere →",
+    "work.cta": "Se cases med resultater →",
     "footer.tag": "Digitale produkter med nordisk enkelhed. Bygget med omhu i Danmark.",
-    "footer.h1": "Studie", "footer.h2": "Mere", "footer.h3": "Kontakt",
+    "footer.h1": "Ydelser", "footer.h2": "Mere", "footer.h3": "Kontakt",
     "footer.proces": "Proces", "footer.faq": "FAQ", "footer.kontakt": "Kontakt",
+    "foot.web": "Hjemmesider", "foot.app": "App-udvikling", "foot.shop": "Webshop", "foot.ux": "UX/UI-design", "foot.cases": "Cases",
     "footer.rights": "Nord Studio. Alle rettigheder forbeholdes.",
     "footer.totop": "Til toppen ↑",
 
@@ -197,9 +200,12 @@ window.I18N = {
     "form.cta": 'Send message <span class="arrow">→</span>',
     "contact.alt": 'Or email us directly at <a href="mailto:hej@nordstudio.dk">hej@nordstudio.dk</a>',
 
+    "card.more": "Learn more →",
+    "work.cta": "See cases with results →",
     "footer.tag": "Digital products with Nordic simplicity. Crafted with care in Denmark.",
-    "footer.h1": "Studio", "footer.h2": "More", "footer.h3": "Contact",
+    "footer.h1": "Services", "footer.h2": "More", "footer.h3": "Contact",
     "footer.proces": "Process", "footer.faq": "FAQ", "footer.kontakt": "Contact",
+    "foot.web": "Websites", "foot.app": "App development", "foot.shop": "Online shop", "foot.ux": "UX/UI design", "foot.cases": "Cases",
     "footer.rights": "Nord Studio. All rights reserved.",
     "footer.totop": "Back to top ↑",
 
