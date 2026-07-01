@@ -168,6 +168,7 @@
   var form = document.querySelector(".contact-form");
   if (form) {
     var status = form.querySelector(".form-status");
+    var submitBtn = form.querySelector('button[type="submit"]');
     function t(key) {
       var lang = document.documentElement.lang === "en" ? "en" : "da";
       return (window.I18N && I18N[lang] && I18N[lang][key]) || "";
@@ -177,6 +178,8 @@
       var name = form.querySelector("#name");
       var email = form.querySelector("#email");
       var message = form.querySelector("#message");
+      var honey = form.querySelector('[name="_honey"]');
+
       if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
         status.textContent = t("msg.required");
         status.style.color = "#ffb86b"; return;
@@ -185,9 +188,38 @@
         status.textContent = t("msg.invalid");
         status.style.color = "#ffb86b"; return;
       }
+      if (honey && honey.value) { return; } // bot caught by honeypot, silently drop
+
+      var data = new FormData();
+      data.append("name", name.value.trim());
+      data.append("email", email.value.trim());
+      data.append("message", message.value.trim());
+      data.append("_subject", "Ny henvendelse fra nordcodestudio.com");
+      data.append("_template", "table");
+      data.append("_captcha", "false");
+
       status.style.color = "";
-      status.textContent = t("msg.thanks").replace("{name}", name.value.trim().split(" ")[0]);
-      form.reset();
+      status.textContent = t("msg.sending");
+      if (submitBtn) submitBtn.disabled = true;
+
+      fetch("https://formsubmit.co/ajax/csgogammer38@gmail.com", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: data
+      })
+        .then(function (res) { return res.ok ? res.json() : Promise.reject(res); })
+        .then(function () {
+          status.style.color = "";
+          status.textContent = t("msg.thanks").replace("{name}", name.value.trim().split(" ")[0]);
+          form.reset();
+        })
+        .catch(function () {
+          status.style.color = "#ffb86b";
+          status.textContent = t("msg.error");
+        })
+        .finally(function () {
+          if (submitBtn) submitBtn.disabled = false;
+        });
     });
   }
 })();
