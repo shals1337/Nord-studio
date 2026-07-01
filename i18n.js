@@ -2,15 +2,14 @@
 window.I18N = {
   da: {
     "meta.title": "Nordcode — Hjemmesider, apps og digitale produkter",
-    "nav.services": "Ydelser", "nav.work": "Arbejde", "nav.pricing": "Priser",
-    "nav.clients": "Kunder", "nav.cta": "Start projekt",
+    "nav.services": "Ydelser", "nav.pricing": "Priser",
+    "nav.cta": "Start projekt",
 
     "hero.pill": "Digitalt studie · Danmark · Ledige fra Q3",
     "hero.title": 'Vi bygger digitale produkter,<br /> folk <span class="grad">husker</span>.',
     "hero.lead": "Nordcode designer og udvikler hjemmesider, apps og skræddersyede løsninger — med nordisk enkelhed, omhu i detaljen og kode, der holder i årevis.",
     "hero.cta1": 'Start et projekt <span class="arrow">→</span>',
-    "hero.cta2": "Se vores arbejde",
-    "hero.trust": "Elsket af kunder — fra startups til etablerede brands.",
+    "hero.cta2": "Se vores ydelser",
 
     "services.eyebrow": "Ydelser",
     "services.title": "Alt det digitale — samlet ét sted",
@@ -24,14 +23,6 @@ window.I18N = {
     "svc3.title": "Diverse digitalt",
     "svc3.desc": "Webshops, dashboards, automatiseringer og integrationer. Har du en idé, finder vi den rigtige løsning.",
     "svc3.t1": "E-handel", "svc3.t2": "Integration", "svc3.t3": "Automatisering",
-
-    "work.eyebrow": "Udvalgt arbejde",
-    "work.title": "Projekter vi er stolte af",
-    "work.sub": "Et lille udsnit. Udskift gerne med jeres egne cases, når I er klar.",
-    "work1.tagline": "Rejser uden besvær", "work1.type": "Hjemmeside & booking", "work1.tag": "Web",
-    "work2.tagline": "Træning der motiverer", "work2.type": "iOS-app", "work2.tag": "App",
-    "work3.tagline": "Kaffe & bagværk", "work3.type": "Webshop", "work3.tag": "E-handel",
-    "work4.tagline": "Indsigt i realtid", "work4.type": "Dashboard", "work4.tag": "Platform",
 
     "pricing.eyebrow": "Priser",
     "pricing.title": "Gennemsigtige priser — ingen skjulte gebyrer",
@@ -54,7 +45,7 @@ window.I18N = {
     "price3.l3": "Integrationer & automatisering", "price3.l4": "Skræddersyet til dig", "price3.cta": "Kontakt os",
     "price.foot": "Alle priser er vejledende. Ingen skjulte gebyrer — det du ser, er det du betaler.",
 
-    "stat1.label": "Leverede projekter", "stat2.label": "Skræddersyet kode",
+    "stat2.label": "Skræddersyet kode",
     "stat3.label": "Års erfaring", "stat4.label": "Svartid på henvendelser",
 
     "process.eyebrow": "Proces",
@@ -64,15 +55,6 @@ window.I18N = {
     "step2.title": "Design", "step2.desc": "Skitser og interaktive prototyper, så du ser løsningen før vi bygger den.",
     "step3.title": "Byg", "step3.desc": "Ren, vedligeholdbar kode med løbende fremvisninger undervejs.",
     "step4.title": "Lancér & pas på", "step4.desc": "Vi går live og bliver — med drift, support og videreudvikling.",
-
-    "testi.eyebrow": "Kunder",
-    "testi.title": "Ord fra dem, vi har hjulpet",
-    "quote1.text": "“Nordcode forvandlede en løs idé til en hjemmeside, vores kunder konstant roser. Hurtige, dygtige og nemme at arbejde sammen med.”",
-    "quote1.role": "Fjord Rejser",
-    "quote2.text": "“Vores app føles gennemført til mindste detalje. Brugerne bliver — og det kan vi mærke på tallene.”",
-    "quote2.role": "Pulse Fitness",
-    "quote3.text": "“Professionelle fra første møde. De leverede til tiden, holdt budgettet og overgik forventningerne.”",
-    "quote3.role": "Nordlys Café",
 
     "faq.eyebrow": "Spørgsmål",
     "faq.title": "Det spørger folk oftest om",
@@ -94,11 +76,10 @@ window.I18N = {
     "contact.alt": 'Eller skriv direkte til <a href="mailto:csgogammer38@gmail.com">csgogammer38@gmail.com</a>',
 
     "card.more": "Læs mere →",
-    "work.cta": "Se cases med resultater →",
     "footer.tag": "Digitale produkter med nordisk enkelhed. Bygget med omhu i Danmark.",
     "footer.h1": "Ydelser", "footer.h2": "Mere", "footer.h3": "Kontakt",
     "footer.proces": "Proces", "footer.faq": "FAQ", "footer.kontakt": "Kontakt",
-    "foot.web": "Hjemmesider", "foot.app": "App-udvikling", "foot.shop": "Webshop", "foot.ux": "UX/UI-design", "foot.cases": "Cases",
+    "foot.web": "Hjemmesider", "foot.app": "App-udvikling", "foot.shop": "Webshop", "foot.ux": "UX/UI-design",
     "foot.privacy": "Privatliv & cookies",
     "crumb.home": "Forside",
 
@@ -136,15 +117,14 @@ window.I18N = {
 
   en: {
     "meta.title": "Nordcode — Websites, apps and digital products",
-    "nav.services": "Services", "nav.work": "Work", "nav.pricing": "Pricing",
-    "nav.clients": "Clients", "nav.cta": "Start project",
+    "nav.services": "Services", "nav.pricing": "Pricing",
+    "nav.cta": "Start project",
 
     "hero.pill": "Digital studio · Denmark · Available from Q3",
     "hero.title": 'We build digital products<br /> people <span class="grad">remember</span>.',
     "hero.lead": "Nordcode designs and builds websites, apps and bespoke solutions — with Nordic simplicity, attention to detail and code that lasts for years.",
     "hero.cta1": 'Start a project <span class="arrow">→</span>',
-    "hero.cta2": "See our work",
-    "hero.trust": "Loved by clients — from startups to established brands.",
+    "hero.cta2": "See our services",
 
     "services.eyebrow": "Services",
     "services.title": "Everything digital — in one place",
@@ -158,14 +138,6 @@ window.I18N = {
     "svc3.title": "Other digital",
     "svc3.desc": "Online shops, dashboards, automations and integrations. If you have an idea, we'll find the right solution.",
     "svc3.t1": "E-commerce", "svc3.t2": "Integration", "svc3.t3": "Automation",
-
-    "work.eyebrow": "Selected work",
-    "work.title": "Projects we're proud of",
-    "work.sub": "A small selection. Swap in your own cases whenever you're ready.",
-    "work1.tagline": "Travel made easy", "work1.type": "Website & booking", "work1.tag": "Web",
-    "work2.tagline": "Training that motivates", "work2.type": "iOS app", "work2.tag": "App",
-    "work3.tagline": "Coffee & pastries", "work3.type": "Online shop", "work3.tag": "E-commerce",
-    "work4.tagline": "Real-time insight", "work4.type": "Dashboard", "work4.tag": "Platform",
 
     "pricing.eyebrow": "Pricing",
     "pricing.title": "Transparent pricing — no hidden fees",
@@ -188,7 +160,7 @@ window.I18N = {
     "price3.l3": "Integrations & automation", "price3.l4": "Tailored to you", "price3.cta": "Contact us",
     "price.foot": "All prices are guideline prices. No hidden fees — what you see is what you pay.",
 
-    "stat1.label": "Delivered projects", "stat2.label": "Custom-built code",
+    "stat2.label": "Custom-built code",
     "stat3.label": "Years of experience", "stat4.label": "Response time on enquiries",
 
     "process.eyebrow": "Process",
@@ -198,15 +170,6 @@ window.I18N = {
     "step2.title": "Design", "step2.desc": "Sketches and interactive prototypes, so you see the solution before we build it.",
     "step3.title": "Build", "step3.desc": "Clean, maintainable code with regular previews along the way.",
     "step4.title": "Launch & care", "step4.desc": "We go live and stay — with maintenance, support and ongoing development.",
-
-    "testi.eyebrow": "Clients",
-    "testi.title": "Words from those we've helped",
-    "quote1.text": "“Nordcode turned a loose idea into a website our customers constantly praise. Fast, skilled and easy to work with.”",
-    "quote1.role": "Fjord Rejser",
-    "quote2.text": "“Our app feels polished down to the last detail. Users stick around — and we can see it in the numbers.”",
-    "quote2.role": "Pulse Fitness",
-    "quote3.text": "“Professional from the first meeting. They delivered on time, kept the budget and exceeded expectations.”",
-    "quote3.role": "Nordlys Café",
 
     "faq.eyebrow": "Questions",
     "faq.title": "What people ask most",
@@ -228,11 +191,10 @@ window.I18N = {
     "contact.alt": 'Or email us directly at <a href="mailto:csgogammer38@gmail.com">csgogammer38@gmail.com</a>',
 
     "card.more": "Learn more →",
-    "work.cta": "See cases with results →",
     "footer.tag": "Digital products with Nordic simplicity. Crafted with care in Denmark.",
     "footer.h1": "Services", "footer.h2": "More", "footer.h3": "Contact",
     "footer.proces": "Process", "footer.faq": "FAQ", "footer.kontakt": "Contact",
-    "foot.web": "Websites", "foot.app": "App development", "foot.shop": "Online shop", "foot.ux": "UX/UI design", "foot.cases": "Cases",
+    "foot.web": "Websites", "foot.app": "App development", "foot.shop": "Online shop", "foot.ux": "UX/UI design",
     "foot.privacy": "Privacy & cookies",
     "crumb.home": "Home",
 

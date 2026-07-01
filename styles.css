@@ -268,6 +268,7 @@ body:hover .cursor-glow { opacity: 1; }
 /* ===== Stats band ===== */
 .stats-band { border-block: 1px solid var(--border); background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent); position: relative; z-index: 2; }
 .stats-inner { max-width: var(--maxw); margin: 0 auto; padding: clamp(2.5rem, 5vw, 3.6rem) clamp(1.1rem, 4vw, 2.5rem); display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; text-align: center; }
+.stats-inner-3 { grid-template-columns: repeat(3, 1fr); max-width: 760px; }
 .stat-num { display: block; font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 700; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent; }
 .stat-label { color: var(--ink-soft); font-size: 0.92rem; }
 
