@@ -10,6 +10,11 @@ window.I18N = {
     "hero.lead": "Nordcode designer og udvikler hjemmesider og apps med nordisk enkelhed og kode, der holder i årevis.",
     "hero.cta1": 'Start et projekt <span class="arrow">→</span>',
     "hero.cta2": "Se ydelser",
+    "hero.card.label": "Studiet, kort fortalt",
+    "hero.card.k1": "Ydelser", "hero.card.v1": "Hjemmesider, apps, webshops",
+    "hero.card.k2": "Baseret", "hero.card.v2": "Danmark",
+    "hero.card.k3": "Sprog", "hero.card.v3": "Dansk & engelsk",
+    "hero.card.k4": "Priser", "hero.card.v4": "fra 3.500 kr",
 
     "services.title": "Alt det digitale, samlet ét sted",
     "services.sub": "Fra første skitse til lancering og videreudvikling. Vi tager ansvar for hele rejsen.",
@@ -73,7 +78,7 @@ window.I18N = {
     "form.cta": 'Send besked <span class="arrow">→</span>',
     "contact.alt": 'Eller skriv direkte til <a href="mailto:csgogammer38@gmail.com">csgogammer38@gmail.com</a>',
 
-    "card.more": "cd videre →",
+    "card.more": "Læs mere →",
     "crumb.home": "Forside",
     "footer.tag": "Digitale produkter med nordisk enkelhed. Bygget med omhu i Danmark.",
     "footer.h1": "Ydelser", "footer.h2": "Mere", "footer.h3": "Kontakt",
@@ -81,7 +86,7 @@ window.I18N = {
     "foot.web": "Hjemmesider", "foot.app": "App-udvikling", "foot.shop": "Webshop", "foot.ux": "UX/UI-design",
     "foot.privacy": "Privatliv & cookies",
     "footer.rights": "Nordcode. Alle rettigheder forbeholdes.",
-    "footer.totop": "cd ~/",
+    "footer.totop": "Til toppen ↑",
 
     "priv.eyebrow": "juridisk",
     "priv.title": "Privatliv & cookies",
@@ -123,6 +128,11 @@ window.I18N = {
     "hero.lead": "Nordcode designs and builds websites and apps with Nordic simplicity and code that lasts for years.",
     "hero.cta1": 'Start a project <span class="arrow">→</span>',
     "hero.cta2": "See services",
+    "hero.card.label": "The studio, in brief",
+    "hero.card.k1": "Services", "hero.card.v1": "Websites, apps, online shops",
+    "hero.card.k2": "Based", "hero.card.v2": "Denmark",
+    "hero.card.k3": "Languages", "hero.card.v3": "Danish & English",
+    "hero.card.k4": "Pricing", "hero.card.v4": "from 3.500 kr",
 
     "services.title": "Everything digital, in one place",
     "services.sub": "From first sketch to launch and beyond. We take care of the whole journey.",
@@ -186,7 +196,7 @@ window.I18N = {
     "form.cta": 'Send message <span class="arrow">→</span>',
     "contact.alt": 'Or email us directly at <a href="mailto:csgogammer38@gmail.com">csgogammer38@gmail.com</a>',
 
-    "card.more": "cd further →",
+    "card.more": "Learn more →",
     "crumb.home": "Home",
     "footer.tag": "Digital products with Nordic simplicity. Crafted with care in Denmark.",
     "footer.h1": "Services", "footer.h2": "More", "footer.h3": "Contact",
@@ -194,7 +204,7 @@ window.I18N = {
     "foot.web": "Websites", "foot.app": "App development", "foot.shop": "Online shop", "foot.ux": "UX/UI design",
     "foot.privacy": "Privacy & cookies",
     "footer.rights": "Nordcode. All rights reserved.",
-    "footer.totop": "cd ~/",
+    "footer.totop": "Back to top ↑",
 
     "priv.eyebrow": "legal",
     "priv.title": "Privacy & cookies",

@@ -9,7 +9,7 @@
   <meta name="keywords" content="hjemmeside, webdesign, app udvikling, webshop, digitalt studie, Nordcode, hjemmeside Danmark, app udvikler" />
   <meta name="author" content="Nordcode" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta name="theme-color" content="#0a0f0d" />
+  <meta name="theme-color" content="#15120e" />
   <meta name="geo.region" content="DK" />
   <meta name="geo.placename" content="Danmark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -38,14 +38,14 @@
   <meta name="twitter:image" content="https://nordcodestudio.com/og-image.png" />
 
   <!-- Icons & manifest -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%230a0f0d'/%3E%3Crect x='6' y='6' width='88' height='88' rx='12' fill='none' stroke='%236cf7a0' stroke-width='4'/%3E%3Cpath d='M30 70V32h7l26 26V32h7v38h-7L37 44v26z' fill='%236cf7a0'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='14' fill='%2315120e'/%3E%3Cpath d='M30 72V28h8l24 30V28h8v44h-8L38 42v30z' fill='%23d38b4f'/%3E%3C/svg%3E" />
   <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="manifest" href="site.webmanifest" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 
   <!-- Structured data -->
@@ -104,11 +104,10 @@
 
   <header class="site-header" id="top">
     <a href="#top" class="brand" aria-label="Nordcode">
-      <svg class="brand-mark" viewBox="0 0 100 100" width="30" height="30" aria-hidden="true">
-        <rect x="4" y="4" width="92" height="92" rx="12" fill="none" stroke="#6cf7a0" stroke-width="5" />
-        <path d="M30 70V32h7l26 26V32h7v38h-7L37 44v26z" fill="#6cf7a0" />
+      <svg class="brand-mark" viewBox="0 0 100 100" width="26" height="26" aria-hidden="true">
+        <path d="M30 72V28h8l24 30V28h8v44h-8L38 42v30z" fill="#d38b4f" />
       </svg>
-      <span class="brand-name">nordcode</span>
+      <span class="brand-name">Nordcode</span>
     </a>
     <div class="header-actions">
       <nav class="nav" aria-label="Hovednavigation">
@@ -138,21 +137,15 @@
           <a href="#ydelser" class="btn btn-ghost" data-i18n="hero.cta2">Se ydelser</a>
         </div>
       </div>
-      <div class="term reveal" role="img" aria-label="Terminal-vindue der viser Nordcodes ydelser">
-        <div class="term-bar">
-          <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot g"></span>
-          <span class="term-title">nordcode ~ zsh</span>
-        </div>
-        <div class="term-body" aria-hidden="true">
-          <div class="term-line"><span class="p">$</span> <span class="c">whoami</span></div>
-          <div class="term-line" data-type data-text="Nordcode · digitalt studie · Danmark"><span class="o">Nordcode · digitalt studie · Danmark</span></div>
-          <div class="term-line"><span class="p">$</span> <span class="c">ls ydelser/</span></div>
-          <div class="term-line" data-type data-text="hjemmesider  apps  webshop  ux-ui"><span class="dir">hjemmesider</span>  <span class="dir">apps</span>  <span class="dir">webshop</span>  <span class="dir">ux-ui</span></div>
-          <div class="term-line"><span class="p">$</span> <span class="c">cat mission.txt</span></div>
-          <div class="term-line" data-type data-text="Vi bygger digitale produkter, folk husker."><span class="o">Vi bygger digitale produkter, folk husker.</span></div>
-          <div class="term-line"><span class="p">$</span> <span class="term-cursor"></span></div>
-        </div>
-      </div>
+      <aside class="hero-card reveal">
+        <p class="hc-label" data-i18n="hero.card.label">Studiet, kort fortalt</p>
+        <dl>
+          <div class="hc-row"><dt data-i18n="hero.card.k1">Ydelser</dt><dd data-i18n="hero.card.v1">Hjemmesider, apps, webshops</dd></div>
+          <div class="hc-row"><dt data-i18n="hero.card.k2">Baseret</dt><dd data-i18n="hero.card.v2">Danmark</dd></div>
+          <div class="hc-row"><dt data-i18n="hero.card.k3">Sprog</dt><dd data-i18n="hero.card.v3">Dansk &amp; engelsk</dd></div>
+          <div class="hc-row"><dt data-i18n="hero.card.k4">Priser</dt><dd><span class="em" data-i18n="hero.card.v4">fra 3.500 kr</span></dd></div>
+        </dl>
+      </aside>
     </section>
 
     <!-- ===== Marquee ===== -->
@@ -171,25 +164,28 @@
         <h2 data-i18n="services.title">Alt det digitale, samlet ét sted</h2>
         <p class="section-sub" data-i18n="services.sub">Fra første skitse til lancering og videreudvikling. Vi tager ansvar for hele rejsen.</p>
       </div>
-      <p class="svc-cmd reveal" data-i18n="services.cmd">ls -la ~/nordcode/ydelser</p>
       <div class="svc-list">
         <a class="svc-row reveal" href="hjemmesider/">
-          <span class="svc-name"><span class="svc-perm">drwxr-xr-x 01</span><h3 data-i18n="svc1.title">Hjemmesider</h3></span>
+          <span class="svc-no">01</span>
+          <span class="svc-name"><h3 data-i18n="svc1.title">Hjemmesider</h3></span>
           <p data-i18n="svc1.desc">Hurtige, responsive og søgemaskinevenlige sider. Fra landingsside til fuldt CMS, du selv kan redigere.</p>
           <span class="svc-arrow" aria-hidden="true">→</span>
         </a>
         <a class="svc-row reveal" href="apps/">
-          <span class="svc-name"><span class="svc-perm">drwxr-xr-x 02</span><h3 data-i18n="svc2.title">Apps</h3></span>
+          <span class="svc-no">02</span>
+          <span class="svc-name"><h3 data-i18n="svc2.title">Apps</h3></span>
           <p data-i18n="svc2.desc">Native og cross-platform apps til iOS og Android, bygget til at føles hurtige og pålidelige.</p>
           <span class="svc-arrow" aria-hidden="true">→</span>
         </a>
         <a class="svc-row reveal" href="webshop/">
-          <span class="svc-name"><span class="svc-perm">drwxr-xr-x 03</span><h3 data-i18n="svc3.title">Webshop</h3></span>
+          <span class="svc-no">03</span>
+          <span class="svc-name"><h3 data-i18n="svc3.title">Webshop</h3></span>
           <p data-i18n="svc3.desc">Overskuelige webshops med betaling, lager og en checkout, der ikke står i vejen for salget.</p>
           <span class="svc-arrow" aria-hidden="true">→</span>
         </a>
         <a class="svc-row reveal" href="ux-ui/">
-          <span class="svc-name"><span class="svc-perm">drwxr-xr-x 04</span><h3 data-i18n="svc4.title">UX/UI-design</h3></span>
+          <span class="svc-no">04</span>
+          <span class="svc-name"><h3 data-i18n="svc4.title">UX/UI-design</h3></span>
           <p data-i18n="svc4.desc">Brugervenlige flows og grænseflader, der gør det enkelt at handle, tilmelde sig eller tage kontakt.</p>
           <span class="svc-arrow" aria-hidden="true">→</span>
         </a>
@@ -316,7 +312,7 @@
           <p class="eyebrow" data-i18n="contact.eyebrow">kontakt</p>
           <h2 data-i18n="contact.title">Har du et projekt i tankerne?</h2>
           <p data-i18n="contact.sub">Fortæl os kort om idéen. Vi vender tilbage inden for én arbejdsdag.</p>
-          <p class="contact-alt"><a href="mailto:csgogammer38@gmail.com">csgogammer38@gmail.com</a></p>
+          <p class="contact-alt" data-i18n="contact.alt">Eller skriv direkte til <a href="mailto:csgogammer38@gmail.com">csgogammer38@gmail.com</a></p>
         </div>
         <form class="contact-form reveal" novalidate>
           <div class="field">
@@ -343,11 +339,10 @@
     <div class="footer-top">
       <div class="footer-brand">
         <div class="brand">
-          <svg class="brand-mark" viewBox="0 0 100 100" width="26" height="26" aria-hidden="true">
-            <rect x="4" y="4" width="92" height="92" rx="12" fill="none" stroke="#6cf7a0" stroke-width="5" />
-            <path d="M30 70V32h7l26 26V32h7v38h-7L37 44v26z" fill="#6cf7a0" />
+          <svg class="brand-mark" viewBox="0 0 100 100" width="24" height="24" aria-hidden="true">
+            <path d="M30 72V28h8l24 30V28h8v44h-8L38 42v30z" fill="#d38b4f" />
           </svg>
-          <span class="brand-name">nordcode</span>
+          <span class="brand-name">Nordcode</span>
         </div>
         <p data-i18n="footer.tag">Digitale produkter med nordisk enkelhed. Bygget med omhu i Danmark.</p>
       </div>
