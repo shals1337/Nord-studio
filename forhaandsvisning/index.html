@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Video-forhåndsvisning · Nordcode</title>
+  <meta name="theme-color" content="#0a0f0d" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%230a0f0d'/%3E%3Crect x='6' y='6' width='88' height='88' rx='12' fill='none' stroke='%236cf7a0' stroke-width='4'/%3E%3Cpath d='M30 70V32h7l26 26V32h7v38h-7L37 44v26z' fill='%236cf7a0'/%3E%3C/svg%3E" />
+  <style>
+    .pv-note { max-width: var(--maxw); margin: 0 auto; padding: 2rem var(--gutter) 0; }
+    .pv-note .eyebrow { margin-bottom: 0.6rem; }
+    .pv-note h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); }
+    .pv-note p { color: var(--muted); max-width: 60ch; margin: 0.8rem 0 0; }
+    .pv-label { font-family: "JetBrains Mono", monospace; font-size: 0.72rem; color: var(--accent-dim); letter-spacing: 0.04em; max-width: var(--maxw); margin: 3.5rem auto 1rem; padding: 0 var(--gutter); }
+    .pv-label::before { content: "// "; color: var(--faint); }
+
+    /* Treatment A: full-bleed ambient band */
+    .band { position: relative; min-height: 62vh; display: grid; place-items: center; overflow: hidden; border-block: 1px solid var(--line); }
+    .band video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+    .band::after {
+      content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background:
+        radial-gradient(80% 90% at 50% 50%, rgba(10,15,13,0.35), rgba(10,15,13,0.82)),
+        linear-gradient(180deg, rgba(10,15,13,0.6), rgba(10,15,13,0.3) 40%, rgba(10,15,13,0.85));
+      mix-blend-mode: normal;
+    }
+    .band .tint { position: absolute; inset: 0; z-index: 1; background: rgba(31, 90, 60, 0.18); mix-blend-mode: overlay; pointer-events: none; }
+    .band-inner { position: relative; z-index: 2; text-align: center; padding: 2rem var(--gutter); max-width: 760px; }
+    .band-inner .kicker { color: var(--accent); }
+    .band-inner h2 { font-size: clamp(2rem, 5vw, 3.4rem); letter-spacing: -0.03em; }
+    .band-inner p { color: var(--muted); margin: 1rem auto 1.6rem; max-width: 48ch; }
+
+    /* Treatment B: framed in a terminal window */
+    .frame-wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter) 4rem; }
+    .term-frame { border: 1px solid var(--line-2); border-radius: 8px; overflow: hidden; background: var(--panel); box-shadow: 0 30px 80px -40px rgba(0,0,0,0.8); }
+    .term-frame video { display: block; width: 100%; height: auto; }
+
+    .pv-actions { max-width: var(--maxw); margin: 0 auto; padding: 1rem var(--gutter) 5rem; display: flex; gap: 0.8rem; flex-wrap: wrap; }
+  </style>
+</head>
+<body data-page="sub">
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <a href="../" class="brand" aria-label="Nordcode forside">
+      <svg class="brand-mark" viewBox="0 0 100 100" width="30" height="30" aria-hidden="true">
+        <rect x="4" y="4" width="92" height="92" rx="12" fill="none" stroke="#6cf7a0" stroke-width="5" />
+        <path d="M30 70V32h7l26 26V32h7v38h-7L37 44v26z" fill="#6cf7a0" />
+      </svg>
+      <span class="brand-name">nordcode</span>
+    </a>
+    <div class="header-actions">
+      <nav class="nav" aria-label="Navigation">
+        <a href="../">Forsiden</a>
+        <a href="../#kontakt" class="nav-cta">Kontakt</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <div class="pv-note">
+      <p class="eyebrow">intern forhåndsvisning</p>
+      <h1>Video-test</h1>
+      <p>To måder at bruge klippet på. Sig til, hvilken du bedst kan lide, eller om vi skal droppe den. Denne side er skjult og bliver ikke indekseret.</p>
+    </div>
+
+    <p class="pv-label">variant A · stemningsbånd (fuld bredde med overlay)</p>
+    <section class="band">
+      <video src="../media/showreel.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+      <div class="tint"></div>
+      <div class="band-inner">
+        <p class="kicker" style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.06em;margin:0 0 1rem">$ build --future</p>
+        <h2>Vi bygger det, andre først bygger om fem år.</h2>
+        <p>Fra idé til færdigt produkt. Skræddersyet, hurtigt og bygget til at holde.</p>
+        <a href="../#kontakt" class="btn btn-primary">Start et projekt <span class="arrow">→</span></a>
+      </div>
+    </section>
+
+    <p class="pv-label">variant B · i et terminal-vindue</p>
+    <div class="frame-wrap">
+      <div class="term-frame">
+        <div class="term-bar">
+          <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot g"></span>
+          <span class="term-title">nordcode ~ showreel.mp4</span>
+        </div>
+        <video src="../media/showreel.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+      </div>
+    </div>
+
+    <div class="pv-actions">
+      <a href="../" class="btn btn-ghost">Tilbage til forsiden</a>
+    </div>
+  </main>
+
+  <script>
+    // Respect reduced motion: pause videos
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.querySelectorAll("video").forEach(function (v) { v.removeAttribute("autoplay"); v.pause(); });
+    }
+    // Mobile nav
+    var t = document.querySelector(".nav-toggle"), n = document.querySelector(".nav");
+    if (t && n) t.addEventListener("click", function () { n.classList.toggle("open"); });
+  </script>
+</body>
+</html>
