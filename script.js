@@ -86,6 +86,35 @@
     counters.forEach(function (el) { cio.observe(el); });
   }
 
+  // Terminal typewriter (honors reduced motion via static fallback)
+  var termBody = document.querySelector(".term-body");
+  var typeEls = termBody ? termBody.querySelectorAll("[data-type]") : [];
+  if (termBody && typeEls.length && !reduceMotion && "IntersectionObserver" in window) {
+    // hide typed outputs until animated
+    typeEls.forEach(function (el) { el.dataset.full = el.textContent; el.textContent = ""; });
+    var started = false;
+    var tio = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting || started) return;
+      started = true;
+      tio.disconnect();
+      var i = 0;
+      function typeNext() {
+        if (i >= typeEls.length) return;
+        var el = typeEls[i];
+        var full = el.dataset.full || "";
+        var j = 0;
+        (function step() {
+          el.textContent = full.slice(0, j);
+          j++;
+          if (j <= full.length) { setTimeout(step, 16); }
+          else { i++; setTimeout(typeNext, 220); }
+        })();
+      }
+      typeNext();
+    }, { threshold: 0.4 });
+    tio.observe(termBody);
+  }
+
   // FAQ single-open
   document.querySelectorAll(".accordion details").forEach(function (d) {
     d.addEventListener("toggle", function () {
