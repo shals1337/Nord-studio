@@ -129,6 +129,7 @@
   <main>
     <!-- ===== Hero ===== -->
     <section class="hero">
+      <canvas class="hero-rain" aria-hidden="true"></canvas>
       <div class="hero-copy">
         <p class="hero-kicker reveal"><span data-i18n="hero.kicker">digitalt studie · danmark</span></p>
         <h1 class="reveal" data-i18n="hero.title">Digitale produkter,<br />folk <span class="accent">husker</span>.</h1>
@@ -138,19 +139,23 @@
           <a href="#ydelser" class="btn btn-ghost" data-i18n="hero.cta2">Se ydelser</a>
         </div>
       </div>
-      <div class="term reveal" role="img" aria-label="Terminal-vindue der viser Nordcodes ydelser">
+      <div class="term reveal" id="terminal" role="region" aria-label="Interaktiv terminal — skriv en kommando">
         <div class="term-bar">
           <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot g"></span>
-          <span class="term-title">nordcode ~ zsh</span>
+          <span class="term-title">visitor@nordcode: ~</span>
         </div>
-        <div class="term-body" aria-hidden="true">
-          <div class="term-line"><span class="p">$</span> <span class="c">whoami</span></div>
-          <div class="term-line" data-type data-text="Nordcode · digitalt studie · Danmark"><span class="o">Nordcode · digitalt studie · Danmark</span></div>
-          <div class="term-line"><span class="p">$</span> <span class="c">ls ydelser/</span></div>
-          <div class="term-line" data-type data-text="hjemmesider  apps  webshop  ux-ui"><span class="dir">hjemmesider</span>  <span class="dir">apps</span>  <span class="dir">webshop</span>  <span class="dir">ux-ui</span></div>
-          <div class="term-line"><span class="p">$</span> <span class="c">cat mission.txt</span></div>
-          <div class="term-line" data-type data-text="Vi bygger digitale produkter, folk husker."><span class="o">Vi bygger digitale produkter, folk husker.</span></div>
-          <div class="term-line"><span class="p">$</span> <span class="term-cursor"></span></div>
+        <div class="term-body" id="term-body">
+          <div class="term-out" id="term-out"></div>
+          <div class="term-input-line" id="term-input-line" hidden>
+            <span class="ti-user">visitor@nordcode</span><span class="ti-colon">:</span><span class="ti-path">~</span><span class="ti-dollar">$</span>
+            <input id="term-input" class="term-input" type="text" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" enterkeyhint="send" aria-label="Skriv en kommando, fx help" />
+          </div>
+        </div>
+        <div class="term-hints" id="term-hints">
+          <button type="button" data-cmd="help">help</button>
+          <button type="button" data-cmd="ls">ls</button>
+          <button type="button" data-cmd="priser">priser</button>
+          <button type="button" data-cmd="kontakt">kontakt</button>
         </div>
       </div>
     </section>
