@@ -12,6 +12,12 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  function glitchOnce(el) {
+    if (reduceMotion || !el) return;
+    el.classList.add("glitching");
+    el.addEventListener("animationend", function () { el.classList.remove("glitching"); }, { once: true });
+  }
+
   // Header state via top sentinel (no scroll listener)
   var header = document.querySelector(".site-header");
   var sentinel = document.getElementById("top-sentinel");
@@ -55,6 +61,10 @@
           var sibs = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
           el.style.transitionDelay = Math.min(sibs * 55, 220) + "ms";
           el.classList.add("in");
+          if (el.classList.contains("section-head")) {
+            var h2 = el.querySelector("h2");
+            if (h2) setTimeout(function () { glitchOnce(h2); }, 350);
+          }
           io.unobserve(el);
         }
       });
@@ -370,7 +380,65 @@
       }, { threshold: 0.35 });
       tio.observe(wrap);
     } else { start(); }
+
+    window.NordTerm = { print: print, run: run };
   })();
+
+  // ===== Terminal 3D tilt (follows the pointer) =====
+  var termEl = document.querySelector(".hero .term");
+  var heroEl = document.querySelector(".hero");
+  if (termEl && heroEl && !reduceMotion && window.matchMedia("(pointer:fine)").matches) {
+    heroEl.addEventListener("pointermove", function (e) {
+      var r = termEl.getBoundingClientRect();
+      if (!r.width) return;
+      var dx = (e.clientX - (r.left + r.width / 2)) / r.width;
+      var dy = (e.clientY - (r.top + r.height / 2)) / r.height;
+      dx = Math.max(-0.9, Math.min(0.9, dx));
+      dy = Math.max(-0.9, Math.min(0.9, dy));
+      termEl.classList.add("tilt");
+      termEl.style.transform = "perspective(950px) rotateY(" + (dx * 5).toFixed(2) + "deg) rotateX(" + (-dy * 5).toFixed(2) + "deg)";
+    });
+    heroEl.addEventListener("pointerleave", function () { termEl.style.transform = ""; });
+  }
+
+  // ===== Magnetic buttons =====
+  if (!reduceMotion && window.matchMedia("(pointer:fine)").matches) {
+    document.querySelectorAll(".hero-actions .btn, .nav-cta, .contact-form .btn, .cta-inner .btn").forEach(function (btn) {
+      btn.classList.add("magnet");
+      btn.addEventListener("pointermove", function (e) {
+        var r = btn.getBoundingClientRect();
+        var dx = e.clientX - (r.left + r.width / 2);
+        var dy = e.clientY - (r.top + r.height / 2);
+        btn.style.transform = "translate(" + (dx * 0.16).toFixed(1) + "px," + (dy * 0.22).toFixed(1) + "px)";
+      });
+      btn.addEventListener("pointerleave", function () { btn.style.transform = ""; });
+    });
+  }
+
+  // ===== Konami code → overdrive =====
+  function overdrive() {
+    var rain = document.querySelector(".hero-rain");
+    if (rain) {
+      rain.style.transition = "opacity 0.6s";
+      rain.style.opacity = "0.5";
+      setTimeout(function () { rain.style.opacity = ""; }, 6000);
+    }
+    var heads = document.querySelectorAll("h1, h2, h3, .brand-name");
+    heads.forEach(function (h, i) { setTimeout(function () { glitchOnce(h); }, i * 45); });
+    if (window.NordTerm) {
+      window.NordTerm.print("⚡ KONAMI · " + L("overdrive aktiveret i 6 sekunder", "overdrive engaged for 6 seconds"), "accent");
+    }
+  }
+  var KONAMI = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
+  var kpos = 0;
+  document.addEventListener("keydown", function (e) {
+    var tag = e.target && e.target.tagName;
+    if (tag === "INPUT" || tag === "TEXTAREA") return;
+    var k = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+    if (k === KONAMI[kpos]) kpos++;
+    else kpos = (k === KONAMI[0]) ? 1 : 0;
+    if (kpos === KONAMI.length) { kpos = 0; overdrive(); }
+  });
 
   // ===== Cursor spotlight on cards =====
   if (window.matchMedia("(pointer:fine)").matches) {

@@ -386,6 +386,27 @@ a { color: inherit; text-decoration: none; }
 .term-hints button::before { content: "$ "; color: var(--accent-dim); }
 .term-hints button:hover { color: var(--accent); border-color: var(--accent-dim); background: var(--panel); }
 
+/* ===== Glitch (green/white split, on-brand) ===== */
+@keyframes glitchShift {
+  0%, 100% { text-shadow: none; transform: none; }
+  20% { text-shadow: 2px 0 rgba(108, 247, 160, 0.75), -2px 0 rgba(232, 242, 236, 0.5); transform: translateX(-1.5px) skewX(-2deg); }
+  40% { text-shadow: -2px 0 rgba(108, 247, 160, 0.75), 2px 0 rgba(232, 242, 236, 0.5); transform: translateX(1.5px); }
+  60% { text-shadow: 1.5px 0 rgba(108, 247, 160, 0.6); transform: translateX(-0.5px) skewX(1deg); }
+  80% { text-shadow: -1px 0 rgba(232, 242, 236, 0.5); }
+}
+.glitching { animation: glitchShift 0.4s steps(2, end); }
+.brand:hover .brand-name { animation: glitchShift 0.4s steps(2, end); }
+.svc-row:hover .svc-name h3 { animation: glitchShift 0.35s steps(2, end); }
+
+/* ===== Terminal 3D tilt ===== */
+.term.tilt { transition: transform 0.16s ease-out; will-change: transform; }
+
+/* ===== Magnetic buttons ===== */
+.btn.magnet, .nav-cta.magnet { transition: background 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s, transform 0.28s var(--ease); }
+
+/* marquee: pause on hover so it can be read */
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
 /* ===== Cursor spotlight glow ===== */
 .price-card::after, .info-grid .card::after, .related-card::after, .svc-row::after {
   content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0;
@@ -433,5 +454,6 @@ a { color: inherit; text-decoration: none; }
   .brand-name::after, .term-cursor, .term-cursor-boot { animation: none; }
   .hero-rain { display: none; }
   .term-body { scroll-behavior: auto; }
+  .glitching, .brand:hover .brand-name, .svc-row:hover .svc-name h3 { animation: none; }
   html { scroll-behavior: auto; }
 }
