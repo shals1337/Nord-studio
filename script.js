@@ -220,6 +220,20 @@
 
     var history = [], hIdx = -1;
 
+    // Tiny retro key blips (opt-in via the 'sound' command)
+    var audioCtx = null, soundOn = false;
+    function blip(freq, dur) {
+      if (!soundOn) return;
+      try {
+        audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+        var o = audioCtx.createOscillator(), g = audioCtx.createGain();
+        o.type = "square"; o.frequency.value = freq || 620;
+        g.gain.value = 0.02;
+        o.connect(g); g.connect(audioCtx.destination);
+        o.start(); o.stop(audioCtx.currentTime + (dur || 0.03));
+      } catch (e) {}
+    }
+
     function help() {
       print(L("Tilgængelige kommandoer:", "Available commands:"), "faint");
       [["help", L("vis denne liste", "show this list")],
@@ -230,6 +244,8 @@
        ["about", L("om Nordcode", "about Nordcode")],
        ["whoami", L("hvem er vi", "who we are")],
        ["neofetch", L("studie-info", "studio info")],
+       ["snake", L("spil snake i terminalen", "play snake in the terminal")],
+       ["sound", L("taste-lyde til/fra", "key sounds on/off")],
        ["clear", L("ryd terminalen", "clear the terminal")]
       ].forEach(function (r) {
         print('<span class="dir">' + r[0] + '</span>&nbsp;&nbsp;<span class="o" style="color:var(--muted)">' + esc(r[1]) + '</span>');
@@ -257,6 +273,108 @@
         var right = info[i] ? '<span class="accent">' + esc(info[i][0]) + '</span><span class="o" style="color:var(--muted)"> · ' + esc(info[i][1]) + '</span>' : "";
         print('<span class="accent">' + art[i].replace(/ /g, "&nbsp;") + '</span>&nbsp;&nbsp;' + right);
       }
+    }
+
+    // ===== Snake =====
+    function startSnake() {
+      if (wrap.dataset.playing) return;
+      wrap.dataset.playing = "1";
+      line.hidden = true;
+      input.blur();
+
+      var W = 18, H = 11;
+      var snakeArr = [{ x: 5, y: 5 }, { x: 4, y: 5 }, { x: 3, y: 5 }];
+      var dir = { x: 1, y: 0 }, nextDir = dir, food = null, score = 0;
+      var best = 0;
+      try { best = parseInt(localStorage.getItem("nordsnake") || "0", 10) || 0; } catch (e) {}
+
+      print(L("SNAKE · pil-taster/WASD · swipe på mobil · q stopper", "SNAKE · arrows/WASD · swipe on mobile · q quits"), "faint");
+      var board = print("");
+      board.style.lineHeight = "1.3";
+
+      function placeFood() {
+        do { food = { x: (Math.random() * W) | 0, y: (Math.random() * H) | 0 }; }
+        while (snakeArr.some(function (s) { return s.x === food.x && s.y === food.y; }));
+      }
+      placeFood();
+
+      function render() {
+        var rows = [];
+        for (var y = 0; y < H; y++) {
+          var r = "";
+          for (var x = 0; x < W; x++) {
+            var cell = "·";
+            if (food.x === x && food.y === y) cell = "◆";
+            for (var i = 0; i < snakeArr.length; i++) {
+              if (snakeArr[i].x === x && snakeArr[i].y === y) { cell = "█"; break; }
+            }
+            r += cell + " ";
+          }
+          rows.push(r);
+        }
+        board.innerHTML = '<span class="accent">' + rows.join("<br>") + '</span><br><span style="color:var(--muted)">score ' + score + (best ? " · best " + best : "") + "</span>";
+        scrollBottom();
+      }
+
+      function setDir(d) {
+        if (d.x === -dir.x && d.y === -dir.y) return;
+        nextDir = d;
+      }
+
+      var timer = null;
+      function stop(msg) {
+        clearInterval(timer);
+        document.removeEventListener("keydown", onKey, true);
+        body.removeEventListener("touchstart", onTouchStart);
+        body.removeEventListener("touchend", onTouchEnd);
+        delete wrap.dataset.playing;
+        if (score > best) { try { localStorage.setItem("nordsnake", String(score)); } catch (e) {} }
+        print(msg + " · score " + score + (score > best ? " · " + L("ny rekord!", "new best!") : ""), score > best ? "accent" : "faint");
+        line.hidden = false;
+        input.focus();
+      }
+
+      function step() {
+        dir = nextDir;
+        var head = { x: (snakeArr[0].x + dir.x + W) % W, y: (snakeArr[0].y + dir.y + H) % H };
+        if (snakeArr.some(function (s) { return s.x === head.x && s.y === head.y; })) {
+          blip(150, 0.18);
+          stop(L("GAME OVER", "GAME OVER"));
+          return;
+        }
+        snakeArr.unshift(head);
+        if (head.x === food.x && head.y === food.y) { score++; blip(880); placeFood(); }
+        else snakeArr.pop();
+        render();
+      }
+
+      function onKey(e) {
+        var k = e.key;
+        var map = {
+          ArrowUp: { x: 0, y: -1 }, ArrowDown: { x: 0, y: 1 }, ArrowLeft: { x: -1, y: 0 }, ArrowRight: { x: 1, y: 0 },
+          w: { x: 0, y: -1 }, s: { x: 0, y: 1 }, a: { x: -1, y: 0 }, d: { x: 1, y: 0 },
+          W: { x: 0, y: -1 }, S: { x: 0, y: 1 }, A: { x: -1, y: 0 }, D: { x: 1, y: 0 }
+        };
+        if (map[k]) { e.preventDefault(); setDir(map[k]); }
+        else if (k === "q" || k === "Q" || k === "Escape") { e.preventDefault(); stop(L("Afsluttet", "Quit")); }
+      }
+
+      var tx = 0, ty = 0;
+      function onTouchStart(e) { var t = e.touches[0]; tx = t.clientX; ty = t.clientY; }
+      function onTouchEnd(e) {
+        var t = e.changedTouches[0];
+        var dx = t.clientX - tx, dy = t.clientY - ty;
+        if (Math.abs(dx) < 18 && Math.abs(dy) < 18) return;
+        if (Math.abs(dx) > Math.abs(dy)) setDir(dx > 0 ? { x: 1, y: 0 } : { x: -1, y: 0 });
+        else setDir(dy > 0 ? { x: 0, y: 1 } : { x: 0, y: -1 });
+      }
+
+      document.addEventListener("keydown", onKey, true);
+      body.addEventListener("touchstart", onTouchStart, { passive: true });
+      body.addEventListener("touchend", onTouchEnd, { passive: true });
+
+      render();
+      timer = setInterval(step, 130);
     }
 
     function run(raw) {
@@ -307,6 +425,12 @@
           if (canvas) canvas.style.transition = "opacity .8s", canvas.style.opacity = "0.42", setTimeout(function () { canvas.style.opacity = ""; }, 3500);
           break;
         case "neofetch": neofetch(); break;
+        case "snake": case "spil": case "game": startSnake(); break;
+        case "sound": case "lyd":
+          soundOn = !soundOn;
+          if (soundOn) blip(660);
+          print(soundOn ? L("🔊 lyd til", "🔊 sound on") : L("🔇 lyd fra", "🔇 sound off"), "faint");
+          break;
         case "nordcode": print(L("Det er os. 👋 Skriv 'about' eller 'kontakt'.", "That's us. 👋 Type 'about' or 'contact'."), "accent"); break;
         default:
           print('<span class="danger" style="color:var(--danger)">' + L("kommando ikke fundet: ", "command not found: ") + esc(c) + '</span> — ' + L("skriv 'help'.", "type 'help'."), "");
@@ -314,9 +438,10 @@
     }
 
     input.addEventListener("keydown", function (e) {
-      if (e.key === "Enter") { e.preventDefault(); run(input.value); input.value = ""; }
+      if (e.key === "Enter") { e.preventDefault(); blip(320, 0.05); run(input.value); input.value = ""; }
       else if (e.key === "ArrowUp") { e.preventDefault(); if (hIdx > 0) { hIdx--; input.value = history[hIdx] || ""; } }
       else if (e.key === "ArrowDown") { e.preventDefault(); if (hIdx < history.length - 1) { hIdx++; input.value = history[hIdx] || ""; } else { hIdx = history.length; input.value = ""; } }
+      else if (e.key.length === 1) { blip(540 + Math.random() * 120); }
     });
 
     if (hints) hints.addEventListener("click", function (e) {
@@ -450,6 +575,38 @@
       });
     });
   }
+
+  // ===== Process build log =====
+  (function buildLog() {
+    var steps = document.getElementById("steps");
+    var blOut = document.getElementById("bl-out");
+    if (!steps || !blOut) return;
+    var items = steps.querySelectorAll("li");
+    function doneMsg() { return "✓ " + L("bygget uden fejl (4/4)", "build succeeded (4/4)"); }
+
+    function finishInstant() {
+      items.forEach(function (li) { li.classList.add("done"); });
+      blOut.textContent = doneMsg();
+    }
+    if (reduceMotion || !("IntersectionObserver" in window)) { finishInstant(); return; }
+
+    var played = false;
+    new IntersectionObserver(function (e, obs) {
+      if (!e[0].isIntersecting || played) return;
+      played = true;
+      obs.disconnect();
+      items.forEach(function (li, i) {
+        setTimeout(function () { li.classList.add("done"); }, 500 + i * 550);
+      });
+      setTimeout(function () {
+        var msg = doneMsg(), i = 0;
+        (function tick() {
+          blOut.textContent = msg.slice(0, ++i);
+          if (i < msg.length) setTimeout(tick, 34);
+        })();
+      }, 500 + items.length * 550);
+    }, { threshold: 0.35 }).observe(steps);
+  })();
 
   // FAQ single-open
   document.querySelectorAll(".accordion details").forEach(function (d) {

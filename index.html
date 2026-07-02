@@ -156,6 +156,7 @@
           <button type="button" data-cmd="ls">ls</button>
           <button type="button" data-cmd="priser">priser</button>
           <button type="button" data-cmd="kontakt">kontakt</button>
+          <button type="button" data-cmd="snake">snake</button>
         </div>
       </div>
     </section>
@@ -281,7 +282,8 @@
         <h2 data-i18n="process.title">En enkel, gennemsigtig proces</h2>
         <p class="section-sub" data-i18n="process.sub">Du ved altid, hvor projektet er, og hvad næste skridt er.</p>
       </div>
-      <ol class="steps">
+      <p class="build-log" id="build-log" aria-hidden="true"><span class="bl-p">$</span> nordcode build <span class="bl-out" id="bl-out"></span></p>
+      <ol class="steps" id="steps">
         <li class="reveal"><span class="step-no">01</span><h3 data-i18n="step1.title">Lyt &amp; forstå</h3><p data-i18n="step1.desc">Vi starter med dine mål, din målgruppe og det, der gør jer unikke.</p></li>
         <li class="reveal"><span class="step-no">02</span><h3 data-i18n="step2.title">Design</h3><p data-i18n="step2.desc">Skitser og interaktive prototyper, så du ser løsningen før vi bygger den.</p></li>
         <li class="reveal"><span class="step-no">03</span><h3 data-i18n="step3.title">Byg</h3><p data-i18n="step3.desc">Ren, vedligeholdbar kode med løbende fremvisninger undervejs.</p></li>
